@@ -34,6 +34,10 @@ class NgramTfIdf(ModelBase):
         self.dic_path = dic_path
         self.tfidf_model_path = tfidf_model_path
         self.tfidf_index_path = tfidf_index_path
+        for per_path in [self.dic_path, self.tfidf_model_path, self.tfidf_index_path]:
+            per_path = '/'.join(per_path.split('/')[:-1])
+            if os.path.exists(per_path) == False:
+                os.makedirs(per_path)
         self.stop_word = stop_word() 
         self.vectorizer = CountVectorizer(stop_words = None, token_pattern='(?u)\\b\\w\\w*\\b')    
         self.transformer = TfidfTransformer()
