@@ -10,7 +10,7 @@
 
 import sys
 from textmatch.models.text_embedding.tf_idf_sklearn import TfIdf
-import textmatch.config.constant as const
+from textmatch.config.constant import Constant as const
 
 
 if __name__ == '__main__':

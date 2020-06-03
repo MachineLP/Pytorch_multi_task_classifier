@@ -15,7 +15,7 @@ import pickle
 import logging
 import numpy as np
 from .stop_words import StopWords
-import textmatch.config.constant as const
+from textmatch.config.constant import Constant as const
 from textmatch.models.model_base.model_base import ModelBase
 from gensim import corpora, models, similarities
 from sklearn.feature_extraction.text import TfidfTransformer

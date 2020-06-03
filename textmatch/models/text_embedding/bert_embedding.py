@@ -10,7 +10,7 @@
 
 import numpy as np
 import tensorflow as tf
-import textmatch.config.constant as const
+from textmatch.config.constant import Constant as const
 from textmatch.models.model_base.model_base import ModelBase
 from bert4keras.backend import keras, set_gelu
 from bert4keras.bert import build_bert_model

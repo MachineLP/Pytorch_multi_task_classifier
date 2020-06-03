@@ -13,7 +13,7 @@ import jieba
 import gensim
 import threading
 import numpy as np
-import holmes.config.constant as const
+from textmatch.config.constant import Constant as const
 from holmes.models.model_base.model_base import ModelBase
 from .stop_words import StopWords
 

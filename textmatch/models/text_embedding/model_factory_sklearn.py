@@ -11,7 +11,7 @@
 import sys
 import logging
 import numpy as np
-import textmatch.config.constant as const
+from textmatch.config.constant import Constant as const
 from textmatch.models.text_embedding.bow_sklearn import Bow
 from textmatch.models.text_embedding.tf_idf_sklearn import TfIdf
 from textmatch.models.text_embedding.ngram_tf_idf_sklearn import NgramTfIdf

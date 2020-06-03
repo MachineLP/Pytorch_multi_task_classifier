@@ -10,7 +10,8 @@
 
 import sys
 from textmatch.models.text_embedding.bow_sklearn import Bow
-import textmatch.config.constant as const
+from textmatch.config.constant import Constant as const
+
 
 
 if __name__ == '__main__':
