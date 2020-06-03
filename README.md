@@ -4,10 +4,13 @@ TextMatch
 
 
 ## 说明
-> cd TextMatch
-> export PYTHONPATH=${PYTHONPATH}:../TextMatch
+```
+cd TextMatch
+export PYTHONPATH=${PYTHONPATH}:../TextMatch
+```
 
 ```python
+
 import sys
 from textmatch.models.text_embedding.model_factory_sklearn import ModelFactory
 
