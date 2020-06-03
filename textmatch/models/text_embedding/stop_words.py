@@ -10,7 +10,7 @@
 
 import gensim
 import time
-import textmatch.config.constant as const
+from textmatch.config.constant import Constant as const
 
 class StopWords(object):
     '''
