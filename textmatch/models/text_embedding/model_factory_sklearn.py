@@ -22,8 +22,8 @@ from textmatch.models.text_embedding.stop_words import StopWords
 
 '''
            elif match_model == 'w2v':
-               model = w2v_model(                       w2v_model_file=const.w2v_model_file, 
-                                                        stop_word=StopWords(stopwords_file=const.stopwords_file) )
+               model = w2v_model(                       w2v_model_file=const.W2V_MODEL_FILE, 
+                                                        stop_word=StopWords(stopwords_file=const.STOPWORDS_FILE) )
                self.model[match_model] = model
            elif match_model == 'bert':
                model = bert_embedding_model(            config_path=const.BERT_CONFIG_PATH, 
