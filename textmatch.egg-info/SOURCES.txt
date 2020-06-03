@@ -1,7 +1,0 @@
-README.md
-setup.py
-textmatch.egg-info/PKG-INFO
-textmatch.egg-info/SOURCES.txt
-textmatch.egg-info/dependency_links.txt
-textmatch.egg-info/requires.txt
-textmatch.egg-info/top_level.txt
