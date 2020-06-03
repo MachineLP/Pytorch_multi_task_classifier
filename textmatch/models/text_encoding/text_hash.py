@@ -41,7 +41,5 @@ class TextEncoding():
         return sim
 
 
-if __name__ == '__main__':
-    test_res = TextEncoding().get_hash("你好啊")
-    print (">>>>>", test_res)
+
 
