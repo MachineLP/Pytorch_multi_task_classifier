@@ -4,7 +4,7 @@ import os
 import threading
 
 class Constant():
-    base_dir = './textmatch/data/'
+    base_dir = './data/'
     # 停用词
     STOPWORDS_FILE = os.path.join(base_dir,'./text_model_file/stop_words/stop_words.txt')
 
@@ -34,7 +34,7 @@ class Constant():
     ALBERT_CONFIG_PATH = os.path.join(base_dir,'./text_model_file/albert_tiny_google_zh_489k/albert_config.json')
     # ALCHECKPOINT_PATH = os.path.join(base_dir,'./text_model_file/albert_tiny_google_zh_489k/albert_model.ckpt')
     ALBERT_DICT_PATH = os.path.join(base_dir,'./text_model_file/albert_tiny_google_zh_489k/vocab.txt')
-    ALCHECKPOINT_PATH = os.path.join(base_dir, './text_model_file/albert_tiny_google_zh_489k/best_model.weights')
+    ALBERT_CHECKPOINT_PATH = os.path.join(base_dir, './text_model_file/albert_tiny_google_zh_489k/best_model.weights')
 
 
     # text资源位置

@@ -21,22 +21,30 @@ set_gelu('tanh')
 class ALBertEmbedding(ModelBase):
     '''通过ALBert计算句向量
     '''
-    def __init__(self, words_list=None,
-                       config_path=const.albert_config_path, 
-                       checkpoint_path = const.albert_checkpoint_path, 
-                       dict_path = const.albert_dict_path,
-                       albert_checkpoint_path = const.albert_checkpoint_path ):
+    def __init__(self, 
+                       config_path=const.ALBERT_CONFIG_PATH, 
+                       albert_checkpoint_path = const.ALBERT_CHECKPOINT_PATH, 
+                       dict_path = const.ALBERT_DICT_PATH,
+                       train_mode=False ):
         self.session = tf.Session() 
         keras.backend.set_session(self.session)
-        self.bert = build_bert_model(
-                     model='albert', 
-                     config_path=config_path,
-                     # checkpoint_path=checkpoint_path,
-                     with_pool=True,
-                     return_keras_model=False,)
-        self.encoder = keras.models.Model(self.bert.model.inputs, self.bert.model.outputs[0])
-        self.encoder.load_weights(albert_checkpoint_path, by_name=True)
-        self.tokenizer = Tokenizer(dict_path, do_lower_case=True) 
+        if train_mode:
+            self.bert = build_bert_model(
+                         model='albert', 
+                         config_path=config_path,
+                         checkpoint_path=albert_checkpoint_path,
+                         with_pool=True,
+                         return_keras_model=False,)
+        else:
+            self.bert = build_bert_model(
+                         model='albert', 
+                         config_path=config_path,
+                         # checkpoint_path=albert_checkpoint_path,
+                         with_pool=True,
+                         return_keras_model=False,)
+            self.encoder = keras.models.Model(self.bert.model.inputs, self.bert.model.outputs[0])
+            self.tokenizer = Tokenizer(dict_path, do_lower_case=True) 
+            self.encoder.load_weights(albert_checkpoint_path, by_name=True)
     
     def init(self, words_list=None, update=True):
         token_ids_list, segment_ids_list = [], []
