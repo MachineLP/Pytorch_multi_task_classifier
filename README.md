@@ -15,5 +15,6 @@ Let's [**Run examples**](./examples/text_search.py) !
 | BERT    |  |
 | ALBERT  |  |
 | DSSM    |  |
+| ....    |  |
 
 
