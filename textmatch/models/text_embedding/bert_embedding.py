@@ -22,16 +22,17 @@ class BertEmbedding(ModelBase):
     '''
     '''
     def __init__(self, 
-                       config_path=const.bert_config_path,
-                       checkpoint_path = const.bert_checkpoint_path,
-                       dict_path = const.bert_dict_path) :
+                       config_path=const.BERT_CONFIG_PATH,
+                       checkpoint_path = const.BERT_CHECKPOINT_PATH,
+                       dict_path = const.BERT_DICT_PATH, 
+                       train_mode=False ) :
         self.session = tf.Session() 
         keras.backend.set_session(self.session)
         self.bert = build_bert_model(
                      config_path,
                      checkpoint_path,
                      with_pool='linear',
-                     application='seq2seq',
+                     # application='seq2seq',
                      return_keras_model=False, )
         self.encoder = keras.models.Model(self.bert.model.inputs, self.bert.model.outputs[0])
         self.tokenizer = Tokenizer(dict_path, do_lower_case=True) 
