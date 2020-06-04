@@ -15,28 +15,12 @@ from textmatch.config.constant import Constant as const
 from textmatch.models.text_embedding.bow_sklearn import Bow
 from textmatch.models.text_embedding.tf_idf_sklearn import TfIdf
 from textmatch.models.text_embedding.ngram_tf_idf_sklearn import NgramTfIdf
-#from textmatch.models.text_embedding.w2v import Word2Vec
+from textmatch.models.text_embedding.w2v import Word2Vec
 from textmatch.models.text_embedding.stop_words import StopWords
-#from textmatch.models.text_embedding.bert_embedding import BertEmbedding
-#from textmatch.models.text_embedding.albert_embedding import ALBertEmbedding
+from textmatch.models.text_embedding.bert_embedding import BertEmbedding
+from textmatch.models.text_embedding.albert_embedding import ALBertEmbedding
 
 '''
-           elif match_model == 'w2v':
-               model = w2v_model(                       w2v_model_file=const.W2V_MODEL_FILE, 
-                                                        stop_word=StopWords(stopwords_file=const.STOPWORDS_FILE) )
-               self.model[match_model] = model
-           elif match_model == 'bert':
-               model = bert_embedding_model(            config_path=const.BERT_CONFIG_PATH, 
-                                                        checkpoint_path = const.BERT_CHECKPOINT_PATH, 
-                                                        dict_path = const.BERT_DICT_PATH)
-               self.model[match_model] = model
-           elif match_model == 'albert':
-               model = albert_embedding_model(
-                                                        config_path=const.ALBERT_CONFIG_PATH, 
-                                                        checkpoint_path = const.ALCHECKPOINT_PATH, 
-                                                        dict_path = const.ALBERT_DICT_PATH, 
-                                                        albert_checkpoint_path = const.ALCHECKPOINT_PATH)
-               self.model[match_model] = model
 '''
 
 class ModelFactory(object):
@@ -65,6 +49,22 @@ class ModelFactory(object):
                model = ngram_tf_idf_model(             dic_path=const.NGRAM_TFIDF_DIC_PATH, 
                                                        tfidf_model_path=const.NGRAM_TFIDF_MODEL_PATH, 
                                                        tfidf_index_path=const.NGRAM_TFIDF_INDEX_PATH, )
+               self.model[match_model] = model
+           elif match_model == 'w2v':
+               model = w2v_model(                       w2v_model_file=const.W2V_MODEL_FILE, 
+                                                        stop_word=StopWords(stopwords_file=const.STOPWORDS_FILE) )
+               self.model[match_model] = model
+           elif match_model == 'bert':
+               model = bert_embedding_model(            config_path=const.BERT_CONFIG_PATH, 
+                                                        checkpoint_path = const.BERT_CHECKPOINT_PATH, 
+                                                        dict_path = const.BERT_DICT_PATH)
+               self.model[match_model] = model
+           elif match_model == 'albert':
+               model = albert_embedding_model(
+                                                        config_path=const.ALBERT_CONFIG_PATH, 
+                                                        albert_checkpoint_path = const.ALCHECKPOINT_PATH, 
+                                                        dict_path = const.ALBERT_DICT_PATH, )
+                                                        #albert_checkpoint_path = const.ALCHECKPOINT_PATH)
                self.model[match_model] = model
            else:
                logging.error( "[ModelFactory] match_model not existed，please select from ['bow', 'tfidf', 'ngram_tfidf', 'w2v', 'bert', 'albert'] " )
