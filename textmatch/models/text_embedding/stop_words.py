@@ -10,6 +10,7 @@
 
 import gensim
 import time
+import jieba
 from textmatch.config.constant import Constant as const
 
 class StopWords(object):

@@ -59,14 +59,37 @@ class Bow(ModelBase):
             self.words_list_pre.append( self._normalize( self._predict(per_word) )[0] )
         self.words_list_pre = np.array(self.words_list_pre)
         return self
-    
+    '''
     # seg word
     def _seg_word(self, words_list, jieba_flag=True, del_stopword=False):
         if jieba_flag:
             word_list = [[self.stop_word.del_stopwords(words) if del_stopword else word for word in jieba.cut(words)] for words in words_list]
         else:
             word_list = [[self.stop_word.del_stopwords(words) if del_stopword else word for word in words] for words in words_list]
+        print( 'word_list>>>', word_list )
         return [ ' '.join(word) for word in word_list  ]
+    '''
+    # seg word
+    def _seg_word(self, words_list, jieba_flag=True, del_stopword=False):
+        word_list = []
+        if jieba_flag:
+            for words in words_list:
+                if del_stopword:
+                    if words!='' and type(words) == str:
+                        word_list.append( [word for word in self.stop_word.del_stopwords(jieba.cut(words))] )
+                else:
+                    if words!='' and type(words) == str:
+                        word_list.append( [word for word in jieba.cut(words)] )
+        else:
+            for words in words_list:
+                if del_stopword:
+                    if words!='' and type(words) == str:
+                        word_list.append( [word for word in self.stop_word.del_stopwords(words)] )
+                else:
+                    if words!='' and type(words) == str:
+                        word_list.append( [word for word in words] )
+        return [ ' '.join(word) for word in word_list  ]
+    
 
     def fit(self, word_list):
         word_list = self._seg_word(word_list)

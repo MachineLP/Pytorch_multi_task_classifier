@@ -20,7 +20,7 @@ class ModelBase(object):
        pass
     
     def _normalize(self, x):
-       x /= (np.array(x)**2).sum(axis=1, keepdims=True)**0.5 
+       x /= (np.array(x)**2 + 0.00001).sum(axis=1, keepdims=True)**0.5 
        return x
 
     def predict(self, words):

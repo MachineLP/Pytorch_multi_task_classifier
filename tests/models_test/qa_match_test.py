@@ -46,7 +46,7 @@ def test_semantic_match(testword,words_dict=test_dict):
 
 
 if __name__ == '__main__':
-    testword = "购买的商品已经拒签原路退回"
+    testword = "购买的商品已经拒签原路退回，什么时候给我办理退换货？"
     test_q_match(testword)
     test_a_match(testword)
     test_semantic_match(testword)
