@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 '''
 -------------------------------------------------
-   Description :  albert train
+   Description :  text search
    Author :       machinelp
    Date :         2020-06-04
 -------------------------------------------------
