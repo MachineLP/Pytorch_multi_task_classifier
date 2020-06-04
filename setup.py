@@ -15,10 +15,10 @@ setuptools.setup(
     description="text matching model library",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/shenweichen/deepmatch",
-    download_url='https://github.com/shenweichen/deepmatch/tags',
+    url="https://github.com/MachineLP/TextMatch",
+    download_url='https://github.com/MachineLP/TextMatch/tags',
     packages=setuptools.find_packages(
-        exclude=["tests", "tests.models", "tests.layers"]),
+        exclude=["tests"]),
     python_requires=">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",  # '>=3.4',  # 3.4.6
     install_requires=REQUIRED_PACKAGES,
     #extras_require={
