@@ -14,7 +14,7 @@ import gensim
 import threading
 import numpy as np
 from textmatch.config.constant import Constant as const
-from holmes.models.model_base.model_base import ModelBase
+from textmatch.models.model_base.model_base import ModelBase
 from .stop_words import StopWords
 
 class Word2VecBase():
