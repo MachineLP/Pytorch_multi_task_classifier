@@ -1,15 +1,15 @@
 
 # 基于mlflow的模型服务
 
-# 构建mlflow server模型
+## 构建mlflow server模型
 > python model_server.py --experiment_name "textmatch" --version_name "001" --model_file "textmodel"
 
-# 启动服务
+## 启动服务
 > mlflow models serve -m /Users/qudian/Desktop/TextMatch/textmodel/ -h 0.0.0.0 -w 3 -p 5000 --no-conda
 
 
 
-# 测试： python post_data.py
+## 测试： python post_data.py
 ```
 import requests
 import pandas as pd
