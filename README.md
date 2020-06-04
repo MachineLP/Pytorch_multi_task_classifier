@@ -1,9 +1,10 @@
 
 TextMatch
-> 文本匹配方案
+
+TextMatch is a semantic matching model library for QA & search ... It's easy to train models and to export representation vectors for text which can be used for **ANN search**.
 
 
-## 说明
+## 
 ```
 cd TextMatch
 export PYTHONPATH=${PYTHONPATH}:../TextMatch
