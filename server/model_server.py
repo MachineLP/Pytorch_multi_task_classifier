@@ -45,7 +45,7 @@ class TextMatchWrapper(mlflow.pyfunc.PythonModel):
 
     def load_context(self, context):
         # wordstest_dict = context.artifacts["wordstest_dict"]
-        self.mf.init(words_dict=self.wordstest_dict, update=False)
+        self.mf.init(words_dict=self.wordstest_dict, update=True)
 
     def predict(self, context, model_input):
         #print('model_input>>>', model_input)
