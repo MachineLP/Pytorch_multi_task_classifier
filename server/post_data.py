@@ -1,16 +1,3 @@
-
-# 基于mlflow的模型服务
-
-# 构建mlflow server模型
-> python model_server.py --experiment_name "textmatch" --version_name "001" --model_file "textmodel"
-
-# 启动服务
-> mlflow models serve -m /Users/qudian/Desktop/TextMatch/textmodel/ -h 0.0.0.0 -w 3 -p 5000 --no-conda
-
-
-
-# 测试： python post_data.py
-```
 import requests
 import pandas as pd
 import json
@@ -38,4 +25,3 @@ for i in range(100):
 '''
 {'bow': [['0', 0.27735009448572867], ['1', 0.5303300779349595], ['2', 0.8660253835771797], ['3', 0.0]], 'tfidf': [['0', 0.9999996100001527], ['1', 0.9999996100001527], ['2', 0.9999996100001527], ['3', 0.0]], 'ngram_tfidf': [['0', 0.9999996100001527], ['1', 0.9999996100001527], ['2', 0.9999996100001527], ['3', 0.0]]}
 '''
-```
