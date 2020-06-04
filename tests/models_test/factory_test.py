@@ -19,13 +19,13 @@ if __name__ == '__main__':
     
     # 基于bow
     mf = ModelFactory( match_models=['bow'] )
-    mf.init(words_dict=wordstest_dict, update=False)
+    mf.init(words_dict=wordstest_dict, update=True)
     bow_pre = mf.predict(testword)
     print ('pre>>>>>', bow_pre) 
     # pre>>>>> {'bow': [('0', 0.2773500981126146), ('1', 0.5303300858899106), ('2', 0.8660254037844388), ('3', 0.0)]}
     
     mf = ModelFactory( match_models=['bow', 'tfidf', 'ngram_tfidf'] )
-    mf.init(words_dict=wordstest_dict, update=False)
+    mf.init(words_dict=wordstest_dict, update=True)
     pre = mf.predict(testword)
     print ('pre>>>>>', pre) 
     # pre>>>>> {'bow': [('0', 0.2773500981126146), ('1', 0.5303300858899106), ('2', 0.8660254037844388), ('3', 0.0)], 'tfidf': [('0', 0.2201159065358879), ('1', 0.46476266418455736), ('2', 0.8749225357988296), ('3', 0.0)], 'ngram_tfidf': [('0', 0.035719486884261346), ('1', 0.09654705406841395), ('2', 0.9561288696241232), ('3', 0.0)]}

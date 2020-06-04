@@ -14,6 +14,7 @@ import pickle
 import logging
 import numpy as np
 from .stop_words import StopWords
+from textmatch.config.config import Config as conf
 from textmatch.config.constant import Constant as const
 from textmatch.models.model_base.model_base import ModelBase
 from gensim import corpora, models, similarities
@@ -70,7 +71,7 @@ class Bow(ModelBase):
         return [ ' '.join(word) for word in word_list  ]
     '''
     # seg word
-    def _seg_word(self, words_list, jieba_flag=True, del_stopword=False):
+    def _seg_word(self, words_list, jieba_flag=conf.JIEBA_FLAG, del_stopword=conf.DEL_STOPWORD):
         word_list = []
         if jieba_flag:
             for words in words_list:
