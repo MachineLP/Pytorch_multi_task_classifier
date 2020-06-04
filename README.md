@@ -4,6 +4,18 @@ TextMatch
 TextMatch is a semantic matching model library for QA & text search ...  It's easy to train models and to export representation vectors.
 
 
+## Models List
+
+|                 Model                  | ...                                                                                                                                                           |
+| :------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|  Bow  |  |
+| TFIDF |  |
+| NGRAMTFIDF     |  |
+| BERT    |  |
+| ALBERT  |  |
+| DSSM    |  |
+
+
 ## 
 ```
 cd TextMatch
