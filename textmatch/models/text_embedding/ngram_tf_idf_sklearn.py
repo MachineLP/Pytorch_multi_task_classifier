@@ -44,11 +44,11 @@ class NgramTfIdf(ModelBase):
 
     # init
     def init(self, words_list=None, update=True):
-        if ~os.path.exists(self.dic_path) or ~os.path.exists(self.tfidf_model_path) or ~os.path.exists(self.tfidf_index_path) or update:
+        if ~os.path.exists(self.dic_path) or ~os.path.exists(self.tfidf_model_path) or update:
             word_list = self._seg_word(words_list)
             # print ('>>>>>>>>>>', word_list)
         
-        if os.path.exists(self.tfidf_model_path) and os.path.exists(self.tfidf_index_path) and update==False:
+        if os.path.exists(self.dic_path) and os.path.exists(self.tfidf_model_path) and update==False:
             with open(self.dic_path, 'rb') as f:
                 self.vectorizer = pickle.load(f)
             with open(self.tfidf_model_path, 'rb') as f:
@@ -75,15 +75,25 @@ class NgramTfIdf(ModelBase):
         temp=[words[i - k:i] for k in range(m, n + 1) for i in range(k, len(words) + 1) ]
         return [item for item in temp if len(''.join(item).strip())>0 and len(pattern1.findall(''.join(item).strip()))==0]
     
-    # seg words
+    # seg word
     def _seg_word(self, words_list, jieba_flag=True, del_stopword=False):
+        word_list = []
         if jieba_flag:
-            word_list = [[self.stop_word.del_stopwords(words) if del_stopword else word for word in jieba.cut(words)] for words in words_list]
+            for words in words_list:
+                if del_stopword:
+                    if words!='' and type(words) == str:
+                        word_list.append( [word for word in self.stop_word.del_stopwords(jieba.cut(words))] )
+                else:
+                    if words!='' and type(words) == str:
+                        word_list.append( [word for word in jieba.cut(words)] )
         else:
-            word_list = [[self.stop_word.del_stopwords(words) if del_stopword else word for word in words] for words in words_list]
-        #if del_stopword:
-        #    word_list = [self.stop_word.del_stopwords(words) for words in words_list]
-        word_list = [['_'.join(i) for i in self._list_3_ngram(words,n=3, m=2)] for words in words_list]
+            for words in words_list:
+                if del_stopword:
+                    if words!='' and type(words) == str:
+                        word_list.append( [word for word in self.stop_word.del_stopwords(words)] )
+                else:
+                    if words!='' and type(words) == str:
+                        word_list.append( [word for word in words] )
         return [ ' '.join(word) for word in word_list  ]
 
 

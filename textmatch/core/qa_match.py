@@ -18,7 +18,7 @@ class QAMatchBase():
 
     def _init_model(self, q_dict, match_models):
         self.mf = self.model_factory( match_models=match_models )
-        self.mf.init(words_dict=q_dict)
+        self.mf.init(words_dict=q_dict, update=True)
 
     def _predict(self, words):
         return self.mf.predict(words)
