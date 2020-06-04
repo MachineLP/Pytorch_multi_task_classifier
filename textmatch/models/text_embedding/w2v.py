@@ -23,8 +23,8 @@ class Word2VecBase():
     _instance_lock = threading.Lock()
     
     def __init__(self, 
-                      w2v_model_file=const.w2v_model_file, 
-                      stop_word=StopWords(stopwords_file=const.stopwords_file)  ):
+                      w2v_model_file=const.W2V_MODEL_FILE, 
+                      stop_word=StopWords(stopwords_file=const.STOPWORDS_FILE)  ):
        self.w2v_model = gensim.models.Word2Vec.load(w2v_model_file)
        self.stop_word = stop_word
     
@@ -58,8 +58,8 @@ class Word2Vec(ModelBase):
     '''
     '''
     def __init__(self, 
-                      w2v_model_file=const.w2v_model_file, 
-                      stop_word=StopWords(stopwords_file=const.stopwords_file)  ):
+                      w2v_model_file=const.W2V_MODEL_FILE, 
+                      stop_word=StopWords(stopwords_file=const.STOPWORDS_FILE)  ):
        self.w2v_model = Word2VecBase( w2v_model_file,  stop_word)
        self._predict = self.w2v_model._predict
    
