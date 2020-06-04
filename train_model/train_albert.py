@@ -47,7 +47,7 @@ def load_data(filename):
 
 
 # 加载数据集
-train_val_data = load_data('train_data.csv') 
+train_val_data = load_data('./data/train_data.csv') 
 # test_data = load_data('dev.csv') 
 # 查看一下数据
 print ( 'train>>>>', train_val_data[0] )
