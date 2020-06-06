@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 '''
 -------------------------------------------------
-   Description :  tf-idf实现
+   Description :  bow train
    Author :       machinelp
    Date :         2020-06-03
 -------------------------------------------------
