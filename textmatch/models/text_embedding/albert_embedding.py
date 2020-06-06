@@ -47,15 +47,16 @@ class ALBertEmbedding(ModelBase):
             self.encoder.load_weights(albert_checkpoint_path, by_name=True)
     
     def init(self, words_list=None, update=True):
-        token_ids_list, segment_ids_list = [], []
-        for words in words_list:
-            token_ids, segment_ids = self.tokenizer.encode(words)
-            token_ids_list.append(token_ids)
-            segment_ids_list.append(segment_ids)
-        token_ids_list = sequence_padding(token_ids_list)
-        segment_ids_list = sequence_padding(segment_ids_list)
-        self.words_list_pre = self.encoder.predict([token_ids_list, segment_ids_list])
-        self.words_list_pre = self._normalize(self.words_list_pre)
+        if words_list!=None:
+            token_ids_list, segment_ids_list = [], []
+            for words in words_list:
+                token_ids, segment_ids = self.tokenizer.encode(words)
+                token_ids_list.append(token_ids)
+                segment_ids_list.append(segment_ids)
+            token_ids_list = sequence_padding(token_ids_list)
+            segment_ids_list = sequence_padding(segment_ids_list)
+            self.words_list_pre = self.encoder.predict([token_ids_list, segment_ids_list])
+            self.words_list_pre = self._normalize(self.words_list_pre)
         return self
     
     def _predict(self, words):

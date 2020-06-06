@@ -27,7 +27,7 @@ class TextEmbedding():
 
     def _init_model(self, words_dict, match_models):
         self.mf = self.model( match_models=match_models )
-        self.mf.init(words_dict=words_dict, update=True)
+        self.mf.init(words_dict=words_dict, update=False)
    
     def predict(self, words, word_id=None):
         return self.mf.predict_emb(words, word_id)

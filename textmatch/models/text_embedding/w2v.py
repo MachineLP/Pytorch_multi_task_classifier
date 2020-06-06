@@ -66,10 +66,11 @@ class Word2Vec(ModelBase):
    
 
     def init(self, words_list=None, update=True, del_stopword=conf.DEL_STOPWORD): 
-       self.words_list_pre = [] 
-       for words in words_list:
-          self.words_list_pre.append( self.w2v_model._predict(words, del_stopword)[0] )
-       self.words_list_pre = self._normalize(self.words_list_pre)
+       if words_list!=None:
+           self.words_list_pre = [] 
+           for words in words_list:
+              self.words_list_pre.append( self.w2v_model._predict(words, del_stopword)[0] )
+           self.words_list_pre = self._normalize(self.words_list_pre)
        return self
     
     def predict(self, words, del_stopword=conf.DEL_STOPWORD):
