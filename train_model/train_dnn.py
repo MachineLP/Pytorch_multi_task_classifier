@@ -13,6 +13,19 @@ import numpy as np
 from textmatch.models.text_embedding.model_factory_sklearn import ModelFactory
 from textmatch.models.text_classifier.dnn import DNN 
 
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn import metrics
+from sklearn.preprocessing import LabelEncoder,OneHotEncoder
+from keras.models import Model
+from keras.layers import LSTM, Activation, Dense, Dropout, Input, Embedding
+from keras.optimizers import RMSprop, Adam
+from keras.preprocessing.text import Tokenizer
+from keras.preprocessing import sequence
+from keras.callbacks import EarlyStopping
+
 
 if __name__ == '__main__':
     doc_dict = {"0":"我去玉龙雪山并且喜欢玉龙雪山玉龙雪山", "1":"我在玉龙雪山并且喜欢玉龙雪山", "2":"我在九寨沟", "3":"你好"}   #["我去玉龙雪山并且喜欢玉龙雪山玉龙雪山","我在玉龙雪山并且喜欢玉龙雪山","我在九寨沟"]
@@ -40,19 +53,7 @@ if __name__ == '__main__':
     val_y = train_labels[2:3]
     print ('train_x:', train_x)
 
-    
-    import pandas as pd
-    import numpy as np
-    import matplotlib.pyplot as plt
-    import seaborn as sns
-    from sklearn import metrics
-    from sklearn.preprocessing import LabelEncoder,OneHotEncoder
-    from keras.models import Model
-    from keras.layers import LSTM, Activation, Dense, Dropout, Input, Embedding
-    from keras.optimizers import RMSprop, Adam
-    from keras.preprocessing.text import Tokenizer
-    from keras.preprocessing import sequence
-    from keras.callbacks import EarlyStopping
+    '''
     dnn_hidden_units = (128, 128),
     dnn_activation = 0.00001
     l2_reg_dnn = 0.00001
@@ -60,9 +61,7 @@ if __name__ == '__main__':
     dnn_use_bn = 1024
     seed = False
     dnn_input =  "text_embedding"
-
     inputs = Input(name='inputs',shape=[16])
-    '''
     dnn_output = DNN(dnn_hidden_units, dnn_activation, l2_reg_dnn, dnn_dropout,dnn_use_bn, seed)(inputs)  
     output = tf.keras.layers.Dense( 1, use_bias=False, activation=None)(dnn_output)
     model = tf.keras.models.Model(inputs=inputs, outputs=output)
@@ -78,8 +77,6 @@ if __name__ == '__main__':
                       validation_data=(val_x,val_y),
                       callbacks=[EarlyStopping(monitor='val_loss',min_delta=0.0001)] ## 当val-loss不再提升时停止训练
                      )
-
-
 
 
 
