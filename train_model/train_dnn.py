@@ -35,7 +35,8 @@ if __name__ == '__main__':
     
     # 基于bow
     mf = ModelFactory( match_models=['bow', 'tfidf'] )
-    mf.init(words_dict=doc_dict, update=True)
+    #mf.init(words_dict=doc_dict, update=True)
+    mf.init(update=False)
     train_sample = []
     for per_query in query:
         bow_pre = mf.predict_emb(per_query)

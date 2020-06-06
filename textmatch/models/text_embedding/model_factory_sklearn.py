@@ -70,8 +70,11 @@ class ModelFactory(object):
                logging.error( "[ModelFactory] match_model not existed，please select from ['bow', 'tfidf', 'ngram_tfidf', 'w2v', 'bert', 'albert'] " )
                continue
     
-    def init(self, words_dict, update=False):
-        self.id_lists, self.words_list = self._dic2list(words_dict)
+    def init(self, words_dict=None, update=False):
+        if words_dict != None:
+            self.id_lists, self.words_list = self._dic2list(words_dict)
+        else:
+            self.id_lists, self.words_list = None, None
         for key, model in self.model.items():
            self.model[key] = model.init(self.words_list, update)
 

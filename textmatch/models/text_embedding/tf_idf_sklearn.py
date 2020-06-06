@@ -44,7 +44,7 @@ class TfIdf(ModelBase):
 
     # init
     def init(self, words_list=None, update=True):
-        if ~os.path.exists(self.dic_path) or ~os.path.exists(self.tfidf_model_path) or update:
+        if (~os.path.exists(self.dic_path) or ~os.path.exists(self.tfidf_model_path) or update) and (words_list!=None):
             word_list = self._seg_word(words_list)
             # print ('>>>>>>>>>>', word_list)
         
@@ -56,15 +56,17 @@ class TfIdf(ModelBase):
         else:
             try:
                  logging.info('[Tfidf] start build tfidf model.')
+                 if words_list==None:
+                     logging.error( '[Bow] words_list is None' )
                  self._gen_model(word_list)
                  logging.info('[Tfidf] build tfidf model success.')
             except Exception as e:
                  logging.error( '[Tfidf] build tfidf model error，error info: {} '.format(e) )
-        
-        self.words_list_pre = []
-        for per_word in words_list:
-            self.words_list_pre.append( self._normalize( self._predict(per_word) )[0] )
-        self.words_list_pre = np.array(self.words_list_pre)
+        if words_list!=None:
+            self.words_list_pre = []
+            for per_word in words_list:
+                self.words_list_pre.append( self._normalize( self._predict(per_word) )[0] )
+            self.words_list_pre = np.array(self.words_list_pre)
         return self
     
     # seg word
