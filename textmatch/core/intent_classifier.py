@@ -11,6 +11,7 @@
 import json 
 import numpy as np
 from textmatch.models.text_embedding.model_factory_sklearn import ModelFactory
+from textmatch.models.text_classifier.dnn import DNN 
 
 
 class IntentClassifier():
