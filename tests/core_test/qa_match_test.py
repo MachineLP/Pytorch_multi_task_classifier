@@ -11,12 +11,14 @@
 import sys
 from textmatch.core.qa_match import QMatch, AMatch, SemanticMatch
 
-test_dict = {"id0": "购买的商品已经拒签原路退回，什么时候给我办理退换货？",
-   "id1": "支付宝怎么搜索不到来分期了？/支付宝怎么不能还款了？",
-   "id2": "你们来分期和支付宝是什么关系？",
-   "id3": "购买的商品是假货已经开具了检测报告",
-   "id4": "来分期怎么下不了单/无法借款",
-   "id5": "我需要提前结清"}
+test_dict = {"id0": "其实事物发展有自己的潮流和规律",
+   "id1": "当你身处潮流之中的时候，要紧紧抓住潮流的机会",
+   "id2": "想办法脱颖而出，即使没有成功，也会更加洞悉时代的脉搏",
+   "id3": "收获珍贵的知识和经验。而如果潮流已经退去",
+   "id4": "这个时候再去往这个方向上努力，只会收获迷茫与压抑",
+   "id5": "对时代、对自己都没有什么帮助",
+   "id6": "但是时代的浪潮犹如海滩上的浪花，总是一浪接着一浪，只要你站在海边，身处这个行业之中，下一个浪潮很快又会到来。你需要敏感而又深刻地去观察，略去那些浮躁的泡沫，抓住真正潮流的机会，奋力一搏，不管成败，都不会遗憾。"}
+
 
 def test_q_match(testword):
     # QMatch
@@ -46,7 +48,7 @@ def test_semantic_match(testword,words_dict=test_dict):
 
 
 if __name__ == '__main__':
-    testword = "购买的商品已经拒签原路退回，什么时候给我办理退换货？"
+    testword = "其实事物发展有自己的潮流和规律"
     test_q_match(testword)
     test_a_match(testword)
     test_semantic_match(testword)
