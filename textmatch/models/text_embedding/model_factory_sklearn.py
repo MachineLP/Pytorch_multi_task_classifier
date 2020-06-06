@@ -30,7 +30,7 @@ class ModelFactory(object):
                        bow_model = Bow,
                        tf_idf_model=TfIdf,
                        ngram_tf_idf_model=NgramTfIdf,
-                       #w2v_model=Word2Vec,
+                       w2v_model=Word2Vec,
                        #bert_embedding_model=BertEmbedding,
                        #albert_embedding_model=ALBertEmbedding,
                        ):
