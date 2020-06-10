@@ -145,9 +145,11 @@ if __name__ == '__main__':
 
 
 4、训练bert  (详见：train_model/train_bert.py)
+   (预训练权重下载：【百度网盘】链接:https://pan.baidu.com/s/1RVAHqL1CfLGltPWpoTyThw  密码:bp71)
 
 
 5、训练albert  (详见：train_model/train_albert.py)
+   (预训练权重下载：【百度网盘】链接:https://pan.baidu.com/s/1-PRsjQSwkGSpQkmjjnSXmw  密码:ynjs)
 
 
 6、训练dssm  (详见：train_model/train_dssm.py)
