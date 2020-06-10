@@ -31,6 +31,7 @@ learning_rate = 2e-5
 
 
 # sim roeberta_zh
+# 【百度网盘】链接:https://pan.baidu.com/s/1-PRsjQSwkGSpQkmjjnSXmw  密码:ynjs
 config_path = 'albert_tiny_google_zh_489k/albert_config.json'
 checkpoint_path = 'albert_tiny_google_zh_489k/albert_model.ckpt'
 dict_path = 'albert_tiny_google_zh_489k/vocab.txt'
