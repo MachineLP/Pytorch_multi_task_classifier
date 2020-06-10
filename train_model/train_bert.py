@@ -28,6 +28,7 @@ learning_rate = 2e-5
 
 
 # sim roeberta_zh
+# 【百度网盘】链接:https://pan.baidu.com/s/1RVAHqL1CfLGltPWpoTyThw  密码:bp71
 config_path = 'publish/bert_config.json'
 checkpoint_path = 'publish/bert_model.ckpt'
 dict_path = 'publish/vocab.txt'
