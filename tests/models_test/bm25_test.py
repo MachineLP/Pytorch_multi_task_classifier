@@ -9,7 +9,7 @@
 '''
 
 import sys
-from textmatch.models.test_search.bm25 import BM25
+from textmatch.models.text_search.bm25 import BM25
 from textmatch.config.constant import Constant as const
 
 

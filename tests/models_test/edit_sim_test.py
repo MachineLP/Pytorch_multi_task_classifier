@@ -9,7 +9,7 @@
 '''
 
 import sys
-from textmatch.models.test_search.edit_sim import EditDistance
+from textmatch.models.text_search.edit_sim import EditDistance
 from textmatch.config.constant import Constant as const
 
 
