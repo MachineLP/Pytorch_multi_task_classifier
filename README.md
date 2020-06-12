@@ -17,6 +17,6 @@ Let's [**Run examples**](./EXAMPLES.md) !
 | ALBERT  | [6](./textmatch/models/text_embedding/albert_embedding.py)             |
 | DSSM    |  |  |
 | ....    |  |  |
-| Bagging    | [...](./textmatch/models/text_embedding/model_factory_sklearn.py)     | [test](./tests/models_test/factory_test.py)  |
-| QA    | [...](./textmatch/core/qa_match.py)     | [test](./tests/core_test/qa_match_test.py)  |
-| Text Embedding    | [...](./textmatch/core/text_embedding.py)     | [test](./tests/core_test/text_embedding_test.py)  |
+| Bagging    | [97](./textmatch/models/text_embedding/model_factory_sklearn.py)     | [test](./tests/models_test/factory_test.py)  |
+| QA    | [98](./textmatch/core/qa_match.py)     | [test](./tests/core_test/qa_match_test.py)  |
+| Text Embedding    | [99](./textmatch/core/text_embedding.py)     | [test](./tests/core_test/text_embedding_test.py)  |
