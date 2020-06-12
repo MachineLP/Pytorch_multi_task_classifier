@@ -26,3 +26,8 @@ Let's [**Run examples**](./EXAMPLES.md) !
 ## TODO
 （1）dssm
 （2）[实体识别](https://github.com/bojone/bert4keras/blob/master/examples/task_sequence_labeling_ner_crf.py)
+
+
+
+- wechat ID: lp9628
+  ![wechat](./docs/pics/WechatIMG.jpeg)
