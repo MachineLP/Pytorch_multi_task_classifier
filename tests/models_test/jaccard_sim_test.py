@@ -9,7 +9,7 @@
 '''
 
 import sys
-from textmatch.models.test_search.jaccard_sim import Jaccard
+from textmatch.models.text_search.jaccard_sim import Jaccard
 from textmatch.config.constant import Constant as const
 
 
