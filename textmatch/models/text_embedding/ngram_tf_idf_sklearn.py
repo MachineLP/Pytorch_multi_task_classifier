@@ -98,7 +98,8 @@ class NgramTfIdf(ModelBase):
                 else:
                     if words!='' and type(words) == str:
                         word_list.append( [word for word in words] )
-        return [ ' '.join(word) for word in word_list  ]
+        # return [ ' '.join(word) for word in word_list  ]
+        return [ ' '.join(['_'.join(i) for i in self._list_3_ngram(word,n=3, m=2)]) for word in word_list]
 
 
     def fit(self, word_list):

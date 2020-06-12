@@ -8,9 +8,9 @@ REQUIRED_PACKAGES = [
 ]
 
 setuptools.setup(
-    name="textmatch",
+    name="TextMatch",
     version="0.1.0",
-    author="machinelp",
+    author="MachineLP",
     author_email="machinelp@163.com",
     description="text matching model library",
     long_description=long_description,
