@@ -3,7 +3,7 @@ TextMatch
 
 TextMatch is a semantic matching model library for QA & text search ...  It's easy to train models and to export representation vectors.
 
-Let's [**Run examples**](./examples/text_search.py) !
+Let's [**Run examples**](./EXAMPLES.md) !
 
 ## Models List
 
