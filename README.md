@@ -24,4 +24,5 @@ Let's [**Run examples**](./EXAMPLES.md) !
 
 
 ## TODO
-dssm 、 实体识别...
+（1）dssm
+（2）[实体识别](https://github.com/bojone/bert4keras/blob/master/examples/task_sequence_labeling_ner_crf.py)
