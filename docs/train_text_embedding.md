@@ -3,7 +3,7 @@
 cd TextMatch
 export PYTHONPATH=${PYTHONPATH}:../TextMatch
 
-1、训练bow
+1、训练bow ( python train_model/train_bow.py )
 ```
 from textmatch.models.text_embedding.bow_sklearn import Bow
 from textmatch.config.constant import Constant as const
@@ -34,7 +34,7 @@ if __name__ == '__main__':
 ```
 
 
-2、训练tfidf
+2、训练tfidf ( python train_model/train_tfidf.py )
 ```
 from textmatch.models.text_embedding.tf_idf_sklearn import TfIdf
 from textmatch.config.constant import Constant as const
@@ -66,7 +66,7 @@ if __name__ == '__main__':
 ```
 
 
-3、训练ngram tfidf
+3、训练ngram tfidf ( python train_model/train_ngram_tfidf.py )
 ```
 import sys
 from textmatch.models.text_embedding.ngram_tf_idf_sklearn import NgramTfIdf
@@ -97,7 +97,7 @@ if __name__ == '__main__':
 
 ```
 
-3、训练w2v  (详见：)
+3、训练w2v  (详见：)   ( python train_model/train_w2v.py )
 ```
 import os
 import time
