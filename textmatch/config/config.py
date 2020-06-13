@@ -2,6 +2,75 @@
 # 
 import os
 import threading
+import numpy as np
+from easydict import EasyDict as edict
+import yaml
+
+# 创建dict
+__C = edict()
+cfg = __C
+
+# 定义配置dict
+__C.emb = edict()
+__C.emb.JIEBA_FLAG = True
+__C.emb.DEL_STOPWORD = False
+__C.emb.MAX_DF = 0.8
+__C.emb.MIN_DF = 0.2
+__C.emb.NGRAM_RANGE = 3
+
+
+# ML
+__C.xgb = edict()
+__C.xgb.learning_rate = 'test-xingoo'
+__C.xgb.max_depth = 30
+
+
+
+#DL
+
+
+
+###
+# 内部方法，实现yaml配置文件到dict的合并
+def _merge_a_into_b(a, b):
+    """Merge config dictionary a into config dictionary b, clobbering the
+    options in b whenever they are also specified in a.
+    """
+    if type(a) is not edict:
+        return
+
+    for k, v in a.items():
+        # a must specify keys that are in b
+        if k not in b:
+            raise KeyError('{} is not a valid config key'.format(k))
+
+        # the types must match, too
+        old_type = type(b[k])
+        if old_type is not type(v):
+            if isinstance(b[k], np.ndarray):
+                v = np.array(v, dtype=b[k].dtype)
+            else:
+                raise ValueError(('Type mismatch ({} vs. {}) '
+                                'for config key: {}').format(type(b[k]),
+                                                            type(v), k))
+
+        # recursively merge dicts
+        if type(v) is edict:
+            try:
+                _merge_a_into_b(a[k], b[k])
+            except:
+                print(('Error under config key: {}'.format(k)))
+                raise
+        else:
+            b[k] = v
+# 自动加载yaml文件
+def cfg_from_file(filename):
+    """Load a config file and merge it into the default options."""
+    with open(filename, 'r', encoding='utf-8') as f:
+        yaml_cfg = edict(yaml.load(f))
+
+    _merge_a_into_b(yaml_cfg, __C)
+
 
 class Config():
     JIEBA_FLAG = True
@@ -14,4 +83,7 @@ class Config():
     # 这个参数将用来观察一元模型（unigrams），二元模型（ bigrams） 和三元模型（trigrams）。参考n元模型（n-grams）。
     NGRAM_RANGE = 3 
 
-
+if __name__ == '__main__':
+    cfg_from_file('config.yml')
+    print(cfg.emb.JIEBA_FLAG)
+    print(cfg.emb.DEL_STOPWORD)
