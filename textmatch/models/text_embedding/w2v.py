@@ -13,7 +13,7 @@ import jieba
 import gensim
 import threading
 import numpy as np
-from textmatch.config.config import Config as conf
+from textmatch.config.config import cfg
 from textmatch.config.constant import Constant as const
 from textmatch.models.model_base.model_base import ModelBase
 from .stop_words import StopWords
@@ -65,7 +65,7 @@ class Word2Vec(ModelBase):
        self._predict = self.w2v_model._predict
    
 
-    def init(self, words_list=None, update=True, del_stopword=conf.DEL_STOPWORD): 
+    def init(self, words_list=None, update=True, del_stopword=cfg.emb.DEL_STOPWORD): 
        if words_list!=None:
            self.words_list_pre = [] 
            for words in words_list:
@@ -73,7 +73,7 @@ class Word2Vec(ModelBase):
            self.words_list_pre = self._normalize(self.words_list_pre)
        return self
     
-    def predict(self, words, del_stopword=conf.DEL_STOPWORD):
+    def predict(self, words, del_stopword=cfg.emb.DEL_STOPWORD):
        pre = [self.w2v_model._predict(words, del_stopword)[0]]
        pre = self._normalize(pre)
        return np.dot( self.words_list_pre[:], pre[0] ) 
