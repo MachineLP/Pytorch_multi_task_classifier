@@ -18,16 +18,18 @@ import xgboost as xgb
 class XGB:
 
     def __init__(self):
-        self.other_params = {'learning_rate': 0.125, 
-                            'max_depth': 3, 
+        self.other_params = {'learning_rate': cfg.xgb.learning_rate, 
+                            'max_depth': cfg.xgb.max_depth, 
                              }
         pass
 
-    def fit(self):
+    def fit(self, X_train, y_train ):
+        self.model = xgb.XGBClassifier(self.other_params).fit(X_train, y_train)  
         pass
 
-    def predict(self):
-        pass
+    def predict(self, X_test):
+        predict = self.model.predict_proba(X_test)[:,1]
+        return predict
 
     def save_model(self):
         pass
