@@ -1,10 +1,10 @@
 
 # 
 import os
+import yaml
 import threading
 import numpy as np
 from easydict import EasyDict as edict
-import yaml
 
 # 创建dict
 __C = edict()
