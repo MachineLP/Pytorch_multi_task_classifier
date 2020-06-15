@@ -20,14 +20,14 @@ class TextEmbedding():
     or
     输出：{'bow': (vector1, vector2), 'tfidf': (vector1, vector2), .....}
     '''
-    def __init__(self, model=ModelFactory, match_models=['bow'], words_dict=None):
+    def __init__(self, model=ModelFactory, match_models=['bow'], words_dict=None, update=True):
         self.model = model
         self.words_dict = words_dict
-        self._init_model( self.words_dict,  match_models)
+        self._init_model( self.words_dict,  match_models, update=update)
 
-    def _init_model(self, words_dict, match_models):
+    def _init_model(self, words_dict, match_models, update=True):
         self.mf = self.model( match_models=match_models )
-        self.mf.init(words_dict=words_dict, update=False)
+        self.mf.init(words_dict=words_dict, update=update)
    
     def predict(self, words, word_id=None):
         return self.mf.predict_emb(words, word_id)
