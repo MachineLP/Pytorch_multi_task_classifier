@@ -33,4 +33,3 @@ Let's [**Run examples**](./EXAMPLES.md) !
 # 
 - wechat ID: lp9628
 
-# ![wechat](./docs/pics/machinelp.png)
