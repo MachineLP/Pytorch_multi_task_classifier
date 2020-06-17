@@ -21,8 +21,23 @@ __C.emb.NGRAM_RANGE = 3
 
 # ML
 __C.xgb = edict()
-__C.xgb.learning_rate = 'test-xingoo'
+__C.xgb.learning_rate = 0.01
 __C.xgb.max_depth = 30
+
+__C.gbdt = edict()
+__C.gbdt.learning_rate = 0.01
+__C.gbdt.max_depth = 30
+
+__C.gbdt_lr = edict()
+__C.gbdt_lr.learning_rate = 0.01
+__C.gbdt_lr.max_depth = 30
+
+__C.lr = edict()
+__C.lr.learning_rate = 0.01
+
+__C.lgb = edict()
+__C.lgb.learning_rate = 0.01
+__C.lgb.max_depth = 30
 
 
 

@@ -11,15 +11,15 @@ import sys
 import logging
 import numpy as np
 from textmatch.config.config import cfg
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import LogisticRegression
 from textmatch.config.constant import Constant as const
 
 class LR:
 
     def __init__(self):
-        self.other_params = {'learning_rate': cfg.lr.learning_rate
-                             }
-        self.clf = LogisticRegression(...)
+        #self.other_params = {'learning_rate': cfg.lr.learning_rate
+        #                     }
+        self.clf = LogisticRegression()
         pass
 
     def fit(self, train_x, train_y):
@@ -27,7 +27,7 @@ class LR:
         return self
 
     def predict(self, X_test):
-        predict = self.model.predict_proba(X_test)[:,1]
+        predict = self.clf.predict_proba(X_test)[:,1]
         return predict
 
     def save_model(self):
