@@ -17,9 +17,9 @@ from sklearn.ensemble import GradientBoostingClassifier
 class GBDT:
 
     def __init__(self):
-        self.other_params = {'learning_rate': cfg.lr.learning_rate
-                             }
-        self.clf = GradientBoostingClassifier(...)
+        #self.other_params = {'learning_rate': cfg.lr.learning_rate
+        #                     }
+        self.clf = GradientBoostingClassifier()
         pass
 
     def fit(self, train_x, train_y):
@@ -27,7 +27,7 @@ class GBDT:
         return self
 
     def predict(self, X_test):
-        predict = self.model.predict_proba(X_test)[:,1]
+        predict = self.clf.predict_proba(X_test)[:,1]
         return predict
 
     def save_model(self):
