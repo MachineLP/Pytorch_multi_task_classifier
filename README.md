@@ -20,7 +20,6 @@ Let's [**Run examples**](./EXAMPLES.md) !
 | edit_sim    | [9](./textmatch/models/text_search/edit_sim.py)  | [test](./tests/models_test/edit_sim_test.py) |
 | jaccard_sim    | [10](./textmatch/models/text_search/jaccard_sim.py)  | [test](./tests/models_test/jaccard_sim_test.py) |
 | wmd    | [11](./tests/models_test/wmd_test.py)  | [test](./tests/models_test/wmd_test.py) |
-
 | Kmeans    | [12](./textmatch/tools/clustering/kmeans.py)  | [test](./tests/tools_test/kmeans_test.py) |
 | DBSCAN    | [13](./textmatch/tools/clustering/dbscan.py)  | [test](./tests/tools_test/dbscan_test.py) |
 | PCA    | [14](./textmatch/tools/decomposition/pca.py)  | [test](./tests/tools_test/pca_test.py) |
