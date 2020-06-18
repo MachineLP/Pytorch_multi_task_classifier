@@ -7,7 +7,7 @@ Let's [**Run examples**](./EXAMPLES.md) !
 
 ## Models List
 
-|         Model       |   models   |    tests   |   pretrain  |
+|         Model       |   models   |    tests   |   
 | :-----------------: | :---------:| :---------:|
 |  Bow  | [1](./textmatch/models/text_embedding/bow_sklearn.py)                    | [test](./tests/models_test/bow_sklearn_test.py) |
 | TFIDF | [2](./textmatch/models/text_embedding/tf_idf_sklearn.py)                 | [test](./tests/models_test/tf_idf_sklearn_test.py) |
