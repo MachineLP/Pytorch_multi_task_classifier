@@ -16,6 +16,16 @@ Let's [**Run examples**](./EXAMPLES.md) !
 | BERT    | [5](./textmatch/models/text_embedding/bert_embedding.py)               | |
 | ALBERT  | [6](./textmatch/models/text_embedding/albert_embedding.py)             | [test](./tests/models_test/albert_embedding_test.py) 链接:https://pan.baidu.com/s/1HSVS104iBBOsfw7hXdyqLQ  密码:808k |
 | DSSM    |  |  |
+
+| bm25    | [8](./textmatch/models/text_search/bm25.py)  | [test](./tests/models_test/bm25_test.py) |
+| edit_sim    | [9](./textmatch/models/text_search/edit_sim.py)  | [test](./tests/models_test/edit_sim_test.py) |
+| jaccard_sim    | [10](./textmatch/models/text_search/jaccard_sim.py)  | [test](./tests/models_test/jaccard_sim_test.py) |
+| wmd    | [11](./tests/models_test/wmd_test.py)  | [test](./tests/models_test/wmd_test.py) |
+
+| Kmeans    | [12](./textmatch/tools/clustering/kmeans.py)  | [test](./tests/tools_test/kmeans_test.py) |
+| DBSCAN    | [13](./textmatch/tools/clustering/dbscan.py)  | [test](./tests/tools_test/dbscan_test.py) |
+| PCA    | [14](./textmatch/tools/decomposition/pca.py)  | [test](./tests/tools_test/pca_test.py) |
+
 | ....    |  |  |
 | lr    | [92](./textmatch/models/ml/lr.py) | [test](./tests/ml_test/lr_test.py) |
 | gbdt    | [93](./textmatch/models/ml/gbdt.py) | [test](./tests/ml_test/gbdt_test.py) |
