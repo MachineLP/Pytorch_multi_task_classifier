@@ -7,14 +7,14 @@ Let's [**Run examples**](./EXAMPLES.md) !
 
 ## Models List
 
-|         Model       |   models   |    tests   |   
+|         Model       |   models   |    tests   |  
 | :-----------------: | :---------:| :---------:|
 |  Bow  | [1](./textmatch/models/text_embedding/bow_sklearn.py)                    | [test](./tests/models_test/bow_sklearn_test.py) |
 | TFIDF | [2](./textmatch/models/text_embedding/tf_idf_sklearn.py)                 | [test](./tests/models_test/tf_idf_sklearn_test.py) |
 | Ngram-TFIDF     | [3](./textmatch/models/text_embedding/ngram_tf_idf_sklearn.py) | [test](./tests/models_test/ngram_tf_idf_sklearn_test.py) |
 | W2V     | [4](./textmatch/models/text_embedding/w2v.py)                          | [test](./tests/models_test/w2v_test.py) |
 | BERT    | [5](./textmatch/models/text_embedding/bert_embedding.py)               | |
-| ALBERT  | [6](./textmatch/models/text_embedding/albert_embedding.py)             |  |
+| ALBERT  | [6](./textmatch/models/text_embedding/albert_embedding.py)             | [test](./tests/models_test/albert_embedding_test.py) 链接:https://pan.baidu.com/s/1HSVS104iBBOsfw7hXdyqLQ  密码:808k |
 | DSSM    |  |  |
 | ....    |  |  |
 | lr    | [92](./textmatch/models/ml/lr.py) | [test](./tests/ml_test/lr_test.py) |
