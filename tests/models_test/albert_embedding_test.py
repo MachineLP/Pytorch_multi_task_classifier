@@ -20,3 +20,4 @@ if __name__ == '__main__':
     testword = "我是他家人/朋友，你有什么事可以给我说？"
     pre = albert.predict(testword)
     print ('pre>>>>>', pre) 
+    # pre>>>>> [0.71687514 0.39825273 0.4128961 ]
