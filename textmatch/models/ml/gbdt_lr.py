@@ -18,18 +18,23 @@ from sklearn.preprocessing import OneHotEncoder
 
 class GBDTLR:
     def __init__(self):
-        #self.other_params = {'learning_rate': cfg.gbdt.learning_rate,
-        #                     'n_estimators':cfg.gbdt.n_estimators,
-        #                     }
-        self.clf_gbdt = GradientBoostingClassifier(n_estimators=50)
-        self.clf_lr = LogisticRegression()
+        self.gbdt_other_params = {}
+        for k, v in cfg.gbdt.items():
+            print ('GBDT params:',k,'>>>>',v)
+            self.gbdt_other_params[k] = v
+        self.lr_other_params = {}
+        for k, v in cfg.lr.items():
+            print ('LR params:',k,'>>>>',v)
+            self.lr_other_params[k] = v
+        self.clf_gbdt = GradientBoostingClassifier(**self.gbdt_other_params)
+        self.clf_lr = LogisticRegression(**self.lr_other_params)
         self.enc = OneHotEncoder()
         pass
 
     def fit(self, train_x, train_y):
         self.clf_gbdt.fit(train_x, train_y)
         train_new_feature = self.clf_gbdt.apply(train_x)
-        train_new_feature = train_new_feature.reshape(-1, 50)
+        train_new_feature = train_new_feature.reshape(-1, self.gbdt_other_params['n_estimators'])
         self.enc.fit(train_new_feature)
         train_new_feature2 = np.array(self.enc.transform(train_new_feature).toarray())
         self.clf_lr.fit(train_new_feature2, train_y)
@@ -38,7 +43,7 @@ class GBDTLR:
 
     def predict(self, X_test):
         test_new_feature = self.clf_gbdt.apply(X_test)
-        test_new_feature = test_new_feature.reshape(-1, 50)
+        test_new_feature = test_new_feature.reshape(-1, self.gbdt_other_params['n_estimators'])
         test_new_feature2 = np.array(self.enc.transform(test_new_feature).toarray())
         predict = self.clf_lr.predict_proba(test_new_feature2)[:,1]
         return predict

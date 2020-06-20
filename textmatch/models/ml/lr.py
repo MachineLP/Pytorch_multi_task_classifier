@@ -17,9 +17,11 @@ from textmatch.config.constant import Constant as const
 class LR:
 
     def __init__(self):
-        #self.other_params = {'learning_rate': cfg.lr.learning_rate
-        #                     }
-        self.clf = LogisticRegression()
+        self.other_params = {}
+        for k, v in cfg.lr.items():
+            print ('LR params:',k,'>>>>',v)
+            self.other_params[k] = v
+        self.clf = LogisticRegression(**self.other_params) 
         pass
 
     def fit(self, train_x, train_y):

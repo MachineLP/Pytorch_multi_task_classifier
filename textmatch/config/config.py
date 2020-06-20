@@ -20,25 +20,43 @@ __C.emb.NGRAM_RANGE = 3
 
 
 # ML
-__C.xgb = edict()
-__C.xgb.learning_rate = 0.01
-__C.xgb.max_depth = 3
+# LR / GBDTLR
+__C.lr = edict()
+__C.lr.max_iter=100
 
+# GBDT / GBDTLR
 __C.gbdt = edict()
 __C.gbdt.learning_rate = 0.01
 __C.gbdt.max_depth = 3
+__C.gbdt.n_estimators = 50
+__C.gbdt.subsample = 0.8
 
-__C.gbdt_lr = edict()
-__C.gbdt_lr.learning_rate = 0.01
-__C.gbdt_lr.max_depth = 3
+# XGB
+__C.xgb = edict()
+__C.xgb.learning_rate = 0.01
+__C.xgb.max_depth = 3
+__C.xgb.boosting_type = 'gbdt'
+__C.xgb.num_leaves = 120
+__C.xgb.min_data_in_leaf = 100
+__C.xgb.feature_fraction = 0.8
+__C.xgb.bagging_fraction = 0.8
+__C.xgb.bagging_freq = 5
+__C.xgb.lambda_l1 = 0.4
+__C.xgb.lambda_l2 = 0.5
 
-__C.lr = edict()
-__C.lr.learning_rate = 0.01
 
+# LGB
 __C.lgb = edict()
 __C.lgb.learning_rate = 0.01
 __C.lgb.max_depth = 3
-
+__C.lgb.boosting_type = 'gbdt'
+__C.lgb.num_leaves = 120
+__C.lgb.min_data_in_leaf = 100
+__C.lgb.feature_fraction = 0.8
+__C.lgb.bagging_fraction = 0.8
+__C.lgb.bagging_freq = 5
+__C.lgb.lambda_l1 = 0.4
+__C.lgb.lambda_l2 = 0.5
 
 
 #DL

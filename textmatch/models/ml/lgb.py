@@ -16,9 +16,15 @@ import lightgbm as lgb
 
 class LGB:
     def __init__(self):
-        #self.other_params = {'learning_rate': cfg.lr.learning_rate
+        self.other_params = {}
+        for k, v in cfg.lgb.items():
+            print ('LGB params:',k,'>>>>',v)
+            self.other_params[k] = v
+        #self.other_params = {'learning_rate': cfg.lgb.learning_rate,
+        #                     'max_depth':cfg.lgb.max_depth,
+        #                     'n_estimators':cfg.lgb.n_estimators
         #                     }
-        self.clf = lgb.LGBMClassifier()
+        self.clf = lgb.LGBMClassifier(**self.other_params)
         pass
 
     def fit(self, train_x, train_y):

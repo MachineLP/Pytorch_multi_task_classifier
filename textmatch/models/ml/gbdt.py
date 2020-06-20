@@ -17,9 +17,15 @@ from sklearn.ensemble import GradientBoostingClassifier
 class GBDT:
 
     def __init__(self):
-        #self.other_params = {'learning_rate': cfg.lr.learning_rate
+        self.other_params = {}
+        for k, v in cfg.gbdt.items():
+            print ('GBDT params:',k,'>>>>',v)
+            self.other_params[k] = v
+        #self.other_params = {'learning_rate': cfg.gbdt.learning_rate,
+        #                     'max_depth':cfg.gbdt.max_depth,
+        #                     'n_estimators':cfg.gbdt.n_estimators
         #                     }
-        self.clf = GradientBoostingClassifier()
+        self.clf = GradientBoostingClassifier(**self.other_params)
         pass
 
     def fit(self, train_x, train_y):

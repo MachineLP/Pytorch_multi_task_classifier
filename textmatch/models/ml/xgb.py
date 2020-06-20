@@ -18,10 +18,15 @@ import xgboost as xgb
 class XGB:
 
     def __init__(self):
-        #self.other_params = {'learning_rate': cfg.xgb.learning_rate, 
-        #                    'max_depth': cfg.xgb.max_depth, 
+        self.other_params = {}
+        for k, v in cfg.xgb.items():
+            print ('XGB params:',k,'>>>>',v)
+            self.other_params[k] = v
+        #self.other_params = {'learning_rate': cfg.xgb.learning_rate,
+        #                     'max_depth':cfg.xgb.max_depth,
+        #                     'n_estimators':cfg.xgb.n_estimators
         #                     }
-        self.clf = xgb.XGBClassifier()
+        self.clf = xgb.XGBClassifier(**self.other_params)
         pass
 
     def fit(self, X_train, y_train ):
