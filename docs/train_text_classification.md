@@ -2,6 +2,7 @@
 
 0、添加项目路径
 cd TextMatch
+pip install -r requirements.txt
 export PYTHONPATH=${PYTHONPATH}:../TextMatch
 
 1、训练dnn

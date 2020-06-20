@@ -10,6 +10,7 @@
 ## 
 '''
 cd TextMatch
+pip install -r requirements.txt
 export PYTHONPATH=${PYTHONPATH}:../TextMatch
 '''
 
