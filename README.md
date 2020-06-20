@@ -106,6 +106,7 @@ if __name__ == '__main__':
 ```
 git clone https://github.com/MachineLP/TextMatch
 cd TextMatch
+pip install -r requirements.txt
 export PYTHONPATH=${PYTHONPATH}:../TextMatch
 python tests/core_test/qa_match_test.py
 python tests/core_test/text_embedding_test.py
@@ -117,6 +118,7 @@ python tests/core_test/text_embedding_test.py
 ```
 git clone https://github.com/MachineLP/TextMatch
 cd TextMatch
+pip install -r requirements.txt
 export PYTHONPATH=${PYTHONPATH}:../TextMatch
 python tests/models_test/bm25_test.py
 python tests/models_test/edit_sim_test.py
@@ -132,6 +134,7 @@ python tests/models_test/albert_test.py
 ```
 git clone https://github.com/MachineLP/TextMatch
 cd TextMatch
+pip install -r requirements.txt
 export PYTHONPATH=${PYTHONPATH}:../TextMatch
 python tests/ml_test/lr_test.py
 python tests/ml_test/gbdt_test.py
@@ -144,8 +147,19 @@ python tests/ml_test/xgb_test.py
 ```
 git clone https://github.com/MachineLP/TextMatch
 cd TextMatch
+pip install -r requirements.txt
 export PYTHONPATH=${PYTHONPATH}:../TextMatch
 python tests/tools_test/kmeans_test.py
 python tests/tools_test/dbscan_test.py
 python tests/tools_test/pca_test.py
 ```
+
+### run tests/tools_test   （词云）
+```
+git clone https://github.com/MachineLP/TextMatch
+cd TextMatch
+pip install -r requirements.txt
+cd tests/tools_test
+python generate_word_cloud.py
+```
+![word_cloud](./docs/pics/word_cloud.png)
