@@ -56,6 +56,7 @@ Let's [**Run examples**](./EXAMPLES.md) !
 ```
 git clone https://github.com/MachineLP/TextMatch
 cd TextMatch
+pip install -r requirements.txt
 export PYTHONPATH=${PYTHONPATH}:../TextMatch
 python examples/text_search.py
 
