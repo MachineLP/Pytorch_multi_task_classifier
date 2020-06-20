@@ -47,7 +47,7 @@ __C.xgb.lambda_l2 = 0.5
 
 # LGB
 __C.lgb = edict()
-__C.lgb.learning_rate = 0.01
+__C.lgb.learning_rate = 0.1
 __C.lgb.max_depth = 3
 __C.lgb.boosting_type = 'gbdt'
 __C.lgb.num_leaves = 120

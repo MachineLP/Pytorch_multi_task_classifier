@@ -32,7 +32,7 @@ class ModelFactory(object):
                        ngram_tf_idf_model=NgramTfIdf,
                        w2v_model=Word2Vec,
                        #bert_embedding_model=BertEmbedding,
-                       #albert_embedding_model=ALBertEmbedding,
+                       albert_embedding_model=ALBertEmbedding,
                        ):
        self.model = {}
        for match_model in match_models:
@@ -62,7 +62,7 @@ class ModelFactory(object):
            elif match_model == 'albert':
                model = albert_embedding_model(
                                                         config_path=const.ALBERT_CONFIG_PATH, 
-                                                        albert_checkpoint_path = const.ALCHECKPOINT_PATH, 
+                                                        albert_checkpoint_path = const.ALBERT_CHECKPOINT_PATH, 
                                                         dict_path = const.ALBERT_DICT_PATH, )
                                                         #albert_checkpoint_path = const.ALCHECKPOINT_PATH)
                self.model[match_model] = model
