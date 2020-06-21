@@ -3,61 +3,6 @@ TextMatch
 
 TextMatch is a semantic matching model library for QA & text search ...  It's easy to train models and to export representation vectors.
 
-Let's [**Run examples**](./EXAMPLES.md) !
-
-## test models List
-
-|         Model       |   models   |    tests   |  
-| :-----------------: | :---------:| :---------:|
-|  Bow  | [1](./textmatch/models/text_embedding/bow_sklearn.py)                    | [test](./tests/models_test/bow_sklearn_test.py) |
-| TFIDF | [2](./textmatch/models/text_embedding/tf_idf_sklearn.py)                 | [test](./tests/models_test/tf_idf_sklearn_test.py) |
-| Ngram-TFIDF     | [3](./textmatch/models/text_embedding/ngram_tf_idf_sklearn.py) | [test](./tests/models_test/ngram_tf_idf_sklearn_test.py) |
-| W2V     | [4](./textmatch/models/text_embedding/w2v.py)                          | [test](./tests/models_test/w2v_test.py) |
-| BERT    | [5](./textmatch/models/text_embedding/bert_embedding.py)               | |
-| ALBERT  | [6](./textmatch/models/text_embedding/albert_embedding.py)             | [test](./tests/models_test/albert_embedding_test.py) 链接:https://pan.baidu.com/s/1HSVS104iBBOsfw7hXdyqLQ  密码:808k |
-| DSSM    |  |  |
-| bm25    | [8](./textmatch/models/text_search/bm25.py)  | [test](./tests/models_test/bm25_test.py) |
-| edit_sim    | [9](./textmatch/models/text_search/edit_sim.py)  | [test](./tests/models_test/edit_sim_test.py) |
-| jaccard_sim    | [10](./textmatch/models/text_search/jaccard_sim.py)  | [test](./tests/models_test/jaccard_sim_test.py) |
-| wmd    | [11](./tests/models_test/wmd_test.py)  | [test](./tests/models_test/wmd_test.py) |
-| Kmeans    | [12](./textmatch/tools/clustering/kmeans.py)  | [test](./tests/tools_test/kmeans_test.py) |
-| DBSCAN    | [13](./textmatch/tools/clustering/dbscan.py)  | [test](./tests/tools_test/dbscan_test.py) |
-| PCA    | [14](./textmatch/tools/decomposition/pca.py)  | [test](./tests/tools_test/pca_test.py) |
-| ....    |  |  |
-| lr    | [92](./textmatch/models/ml/lr.py) | [test](./tests/ml_test/lr_test.py) |
-| gbdt    | [93](./textmatch/models/ml/gbdt.py) | [test](./tests/ml_test/gbdt_test.py) |
-| gbdt_lr    | [94](./textmatch/models/ml/gbdt_lr.py) | [test](./tests/ml_test/gbdt_lr_test.py) |
-| lgb    | [95](./textmatch/models/ml/lgb.py) | [test](./tests/ml_test/lgb_test.py) |
-| xgb    | [96](./textmatch/models/ml/xgb.py) | [test](./tests/ml_test/xgb_test.py) |
-| Bagging    | [97](./textmatch/models/text_embedding/model_factory_sklearn.py)     | [test](./tests/models_test/factory_test.py)  |
-| QA    | [98](./textmatch/core/qa_match.py)     | [test](./tests/core_test/qa_match_test.py)  |
-| Text Embedding    | [99](./textmatch/core/text_embedding.py)     | [test](./tests/core_test/text_embedding_test.py)  |
-
-# 
-
-## train models List
-|         Model       |   models   |    train   |  
-| :-----------------: | :---------:| :---------:|
-|  Bow  | [1](./textmatch/models/text_embedding/bow_sklearn.py)                    | [train](./train_model/train_bow.py) |
-| TFIDF | [2](./textmatch/models/text_embedding/tf_idf_sklearn.py)                 | [train](./train_model/train_tfidf.py) |
-| Ngram-TFIDF     | [3](./textmatch/models/text_embedding/ngram_tf_idf_sklearn.py) | [train](./train_model/train_ngram_tfidf.py) |
-| W2V     | [4](./textmatch/models/text_embedding/w2v.py)                          | [train](./train_model/train_w2v.py) |
-| BERT    | [5](./textmatch/models/text_embedding/bert_embedding.py)               | [train](./train_model/train_bert.py) |
-| ALBERT  | [6](./textmatch/models/text_embedding/albert_embedding.py)             | [train](./train_model/train_albert.py) |
-| DSSM    |  |  |
-| Kmeans    | [12](./textmatch/tools/clustering/kmeans.py)  | [train](./tests/tools_test/kmeans_test.py) |
-| DBSCAN    | [13](./textmatch/tools/clustering/dbscan.py)  | [train](./tests/tools_test/dbscan_test.py) |
-| PCA    | [14](./textmatch/tools/decomposition/pca.py)  | [train](./tests/tools_test/pca_test.py) |
-| ....    |  |  |
-| lr    | [92](./textmatch/models/ml/lr.py) | [train](./train_model/train_lr_classifer.py) |
-| gbdt    | [93](./textmatch/models/ml/gbdt.py) | [train](./train_model/train_gbdt_classifer.py) |
-| gbdt_lr    | [94](./textmatch/models/ml/gbdt_lr.py) | [train](./train_model/train_gbdtlr_classifer.py) |
-| lgb    | [95](./textmatch/models/ml/lgb.py) | [train](./train_model/train_lgb_classifer.py) |
-| xgb    | [96](./textmatch/models/ml/xgb.py) | [train](./train_model/train_xgb_classifer.py) |
-
-
-
-
 ## TODO
 （1）dssm
 （2）[实体识别](https://github.com/bojone/bert4keras/blob/master/examples/task_sequence_labeling_ner_crf.py)
