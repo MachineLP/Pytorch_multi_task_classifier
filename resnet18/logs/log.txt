@@ -1,0 +1,12 @@
+Mon Jun 21 13:41:12 2021 Fold 0, Epoch 1, lr: 0.0000300, train loss: 1.54934, valid loss: 1.60140, color_acc: 42.5000, action_acc: 25.000000.
+Mon Jun 21 13:41:14 2021 Fold 0, Epoch 2, lr: 0.0003000, train loss: 1.45985, valid loss: 1.51310, color_acc: 42.5000, action_acc: 25.000000.
+Mon Jun 21 13:41:15 2021 Fold 0, Epoch 3, lr: 0.0002991, train loss: 1.49160, valid loss: 1.49611, color_acc: 42.5000, action_acc: 25.000000.
+Mon Jun 21 13:41:17 2021 Fold 0, Epoch 4, lr: 0.0002965, train loss: 1.47136, valid loss: 1.47372, color_acc: 42.5000, action_acc: 27.500000.
+Mon Jun 21 13:41:18 2021 Fold 0, Epoch 5, lr: 0.0002921, train loss: 1.41253, valid loss: 1.45972, color_acc: 37.5000, action_acc: 27.500000.
+Mon Jun 21 13:41:20 2021 Fold 0, Epoch 6, lr: 0.0002861, train loss: 1.56870, valid loss: 1.44690, color_acc: 35.0000, action_acc: 32.500000.
+Mon Jun 21 13:41:21 2021 Fold 0, Epoch 7, lr: 0.0002785, train loss: 1.38914, valid loss: 1.47591, color_acc: 35.0000, action_acc: 37.500000.
+Mon Jun 21 13:41:23 2021 Fold 0, Epoch 8, lr: 0.0002694, train loss: 1.38396, valid loss: 1.53836, color_acc: 35.0000, action_acc: 40.000000.
+Mon Jun 21 13:41:24 2021 Fold 0, Epoch 9, lr: 0.0002589, train loss: 1.42151, valid loss: 1.61219, color_acc: 35.0000, action_acc: 40.000000.
+Mon Jun 21 13:41:26 2021 Fold 0, Epoch 10, lr: 0.0002471, train loss: 1.35890, valid loss: 1.66660, color_acc: 30.0000, action_acc: 40.000000.
+Mon Jun 21 13:41:27 2021 Fold 0, Epoch 11, lr: 0.0002342, train loss: 1.41353, valid loss: 1.70483, color_acc: 30.0000, action_acc: 40.000000.
+Mon Jun 21 13:41:29 2021 Fold 0, Epoch 12, lr: 0.0002203, train loss: 1.45255, valid loss: 1.70912, color_acc: 30.0000, action_acc: 40.000000.
