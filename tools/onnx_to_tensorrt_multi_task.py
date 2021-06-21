@@ -101,7 +101,9 @@ class ModelTensorRT:
                 outputs0, outputs1 = self.less_predict(inputs)
             elif inp_batch == self.inputs_shape[0]:
                 print('batch size equal ')
-                outputs0, outputs1 = self.engine.run([inputs])[0]
+                outputs = self.engine.run([inputs])
+                outputs0 = outputs[0]
+                outputs1 = outputs[1]
             else:
                 print('inputs batch greater than engine inputs')
                 outputs0 = []
@@ -111,7 +113,7 @@ class ModelTensorRT:
                     if i != 0:
                         inp = inputs[li:i, :]
                         if inp.shape[0] == self.inputs_shape[0]:
-                            outs = self.engine.run([inp])[0]
+                            outs = self.engine.run([inp])
                             outs0, outs1 = outs[0], outs[1]
                         else:
                             outs0, outs1 = self.less_predict(inp)
