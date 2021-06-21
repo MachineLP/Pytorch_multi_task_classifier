@@ -53,9 +53,9 @@ python train_multi_task.py --config_path conf/resnet18.yaml
 4、Models transform ( https://github.com/NVIDIA-AI-IOT/torch2trt )
 
 ```
-    onnx：python tools/pytorch_to_onnx_multi_task.py --config_path "conf/resnest101.yaml" --img_path "./data/img/0male/1_2.jpg" --batch_size 4 --fold 0 --save_path "lp.onnx"
+    onnx：python tools/pytorch_to_onnx_multi_task.py --config_path "conf/resnet18.yaml" --img_path "./data/img/0male/1_2.jpg" --batch_size 4 --fold 0 --save_path "lp.onnx"
 
-    tensorrt：python tools/onnx_to_tensorrt_multi_task.py --config_path "conf/resnest101.yaml" --img_path "./data/img/0male/1_2.jpg" --batch_size 4 --fold 0 --save_path "lp_pp.onnx" --trt_save_path "lp.trt"
+    tensorrt：python tools/onnx_to_tensorrt_multi_task.py --config_path "conf/resnet18.yaml" --img_path "./data/img/0male/1_2.jpg" --batch_size 4 --fold 0 --save_path "lp_pp.onnx" --trt_save_path "lp.trt"
 ```
 
 
