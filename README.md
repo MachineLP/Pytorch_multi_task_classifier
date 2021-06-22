@@ -28,7 +28,7 @@ cd PyTorch_image_classifier
 python tools/data_preprocess_multi_task.py --data_dir "./data/data.csv" --n_splits 3 --output_dir "./data/train.csv" --random_state 2020
 ```
 
-## resnest101
+## resnet18
 1、Modify configuration file
 
 ```
