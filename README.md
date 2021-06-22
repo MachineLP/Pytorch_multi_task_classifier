@@ -50,7 +50,7 @@ python train_multi_task.py --config_path conf/resnet18.yaml
 ```
 
 
-4、Models transform ( https://github.com/NVIDIA-AI-IOT/torch2trt )
+4、Models transform ( https://github.com/NVIDIA-AI-IOT/torch2trt ) ([Tensorrt installation guide on Ubuntu1804](./docs/Tensorrt_installation_guide_on_Ubuntu1804.md))
 
 ```
     onnx：python tools/pytorch_to_onnx_multi_task.py --config_path "conf/resnet18.yaml" --img_path "./data/img/0male/1_2.jpg" --batch_size 4 --fold 0 --save_path "lp.onnx"
