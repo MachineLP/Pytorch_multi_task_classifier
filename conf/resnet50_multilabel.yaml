@@ -1,0 +1,23 @@
+
+data_dir : "./data/"
+data_folder : "./data/"
+image_size : 256
+enet_type : "resnet50"  # tf_efficientnet_b4_ns/resnest101/seresnext101
+metric_strategy : False
+batch_size : 64
+num_workers : 12
+init_lr : 3e-5
+out_dim : 509
+n_epochs : 30
+drop_nums : 1
+loss_type : "ce_loss"  # ce_loss, ce_smothing_loss, focal_loss, bce_loss(多标签，待支持), mlsm_loss(多标签，待支持)
+use_amp : False
+mixup_cutmix : False
+model_dir : "./resnet50/weight/"
+log_dir : "./resnet50/logs/"
+CUDA_VISIBLE_DEVICES : "0"   # 多GPU训练："0,1,2,3"
+fold : "0,1,2,3,4"
+pretrained : True
+eval : "best"                  # "best", "final"
+oof_dir : "./resnet50/oofs/"
+auc_index : "punch"
