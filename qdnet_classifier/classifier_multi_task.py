@@ -80,6 +80,31 @@ class MultiLabelModel(nn.Module):
             accuracy_action = balanced_accuracy_score(y_true=gt_action.numpy(), y_pred=predicted_action.numpy())
 
         return accuracy_color, accuracy_action
+    
+    # acc, precision, recall, f1
+    def compute_metrics(self, output, target, **kwargs):
+        metrics = dict()
+
+        with torch.no_grad():
+            predictions = torch.softmax(output, 1).max(1)[1].cpu().numpy()
+            target = target.cpu().numpy()
+
+            metrics["accuracy"] = accuracy_score(target, predictions)
+            metrics["per_class"] = classification_report(
+                target, predictions,
+                output_dict=True,
+                labels=list(range(22)),
+                target_names=['10019', '10004', '10011', '10015', '10013', '10005', '10012', '10108', '10016', '10006', '10020', '10002', '10009', '10017', '10010', '10007', '10014', '10001', '10018', '10021', '13934', '10003'],
+                zero_division=1)
+
+        def to_tensor_recursive(val):
+            if not isinstance(val, dict):
+                return torch.as_tensor(val).to(output)
+            for k, v in val.items():
+                val[k] = to_tensor_recursive(v)
+            return val
+
+        return metrics
 
 
 class MultilabelClassifier:
