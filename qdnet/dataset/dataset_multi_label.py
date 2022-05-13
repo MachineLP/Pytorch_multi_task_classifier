@@ -74,7 +74,7 @@ for per_leaf in leaf_node:
 for label_key, label_value in label_list_dict.items():
     # print ( "label_key:{}, label_value:{}".format( label_key, label_value ) )
     print ( "label_key num:{}, label_value num :{}".format( label_key, len(label_value) ) )
-
+print ("label_list_dict[0]>>>>>>>", label_list_dict[0])
 
 '''
 label_key num:0, label_value num :22
@@ -89,18 +89,22 @@ for label_key, label_value in label_list_dict.items():
     all_num += len(label_value)
 
 label_dict = {}
+label_index_dict = {}
 for label_index, per_leaf in enumerate( leaf_node ):
     # get father list
     # 5 
     pid_list = father_dict[per_leaf] + [str(per_leaf)] 
     sum = 0
     label = np.zeros([all_num,], dtype=np.float32)
+    label_index = 0
+    label_index = int(label_list_dict[0].index(pid_list[0]))
     for i in range(6):
         if i < len(pid_list):
             father_id = pid_list[i]
             label[int(sum+label_list_dict[i].index(father_id))] = 1.0
             sum += len( label_list_dict[i] )
     label_dict[per_leaf] = label
+    label_index_dict[per_leaf] = label_index
     # break
 
 print ( "label_dict>>>>>>", label_dict[str(10505)] )
