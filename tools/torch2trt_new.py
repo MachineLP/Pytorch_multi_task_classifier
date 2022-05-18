@@ -1,3 +1,4 @@
+
 """
 # conda环境，python3.8 
 
@@ -58,3 +59,4 @@ img1 = cv2.imread("./finance.png")
 l1 = infer_obj.predict(img1)
 l2 = infer_obj_trt.predict(img1)
 print(l1, l2)
+
