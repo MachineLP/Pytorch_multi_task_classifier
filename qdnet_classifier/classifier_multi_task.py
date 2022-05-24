@@ -86,8 +86,8 @@ class MultiLabelModel(nn.Module):
         metrics = dict()
 
         with torch.no_grad():
-            predictions = torch.softmax(output, 1).max(1)[1].cpu().numpy()
-            target = target.cpu().numpy()
+            predictions = output #torch.softmax(output, 1).max(1)[1].cpu().numpy()
+            target = target #target.cpu().numpy()
 
             metrics["accuracy"] = accuracy_score(target, predictions)
             metrics["per_class"] = classification_report(
