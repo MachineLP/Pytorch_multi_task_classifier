@@ -86,6 +86,10 @@ def val_epoch(model, loader, get_output=False):
             data, target = data.to(device), target.to(device)
             # probs = torch.zeros((data.shape[0], int(config["out_dim"]))).to(device)
             output = model(data)
+            #probs = F.softmax(output,dim =1)
+            #probs = probs.cpu().detach().numpy()
+            #output_list += list( probs.argmax(1) )
+            #target_list += list( target.cpu().detach().numpy() )
             # acc1, acc3, {'color': acc1_color, 'action': acc1_action}
             precision, recall = model.get_accuracy( output, target )
 
