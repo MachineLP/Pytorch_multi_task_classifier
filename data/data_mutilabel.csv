@@ -1,0 +1,7 @@
+filepath,target1,target2,fold
+./data/img/0male/0_1.jpg,1,0,1,1,0
+'''
+训练时候需要将1,0,1,1,0，转为numpy
+用strip().split(',')[1:]先转为 list
+再numpy()
+'''
