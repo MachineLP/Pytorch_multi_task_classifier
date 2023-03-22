@@ -17,9 +17,9 @@ for line in lines:
     img_name = per_line[0]
     if img_name in balck_list:
         continue
-    occ_hand_label_list= ','.join( per_line[1:]+ ['0','0','0'] )
+    occ_hand_label_list= ','.join( ['0'] + per_line[1:]+ ['0','0','0'] )
     img_occ_hand_label = occ_hand_label_list
-    img_normal_label = ','.join(['0','0','0','0','0','0','0','0'])
+    img_normal_label = ','.join(['1','0','0','0','0','0','0','0','0'])
 
     img_occ_hand_name_list.append( str('./data/img/occ_hand/' + img_name) )
     img_normal_name_list.append( str('./data/img/train_img/' + img_name) )
@@ -39,7 +39,7 @@ for line in lines:
     img_name = per_line[0]
     if img_name in balck_list:
         continue
-    occ_objects_label_list= ','.join( per_line[1:] + ['0','0','0'] )
+    occ_objects_label_list= ','.join( ['0'] + per_line[1:] + ['0','0','0'] )
     # occ_label_list = [ int(i) for i in per_line[1:] ]
     img_occ_objects_label = occ_objects_label_list
     img_occ_objects_name_list.append( str('./data/img/occ_objects/' + img_name) )
@@ -58,7 +58,7 @@ img_face_mask_name_list = []
 img_face_mask_label_list = []
 for per_img_name in all_img_name:
     per_img_path = os.path.join(img_path, per_img_name)
-    img_face_mask_label = ','.join(['0','0','0','1','1','1','0','0'])
+    img_face_mask_label = ','.join(['0','0','0','0','1','1','1','0','0'])
 
     img_face_mask_name_list.append( per_img_path )
     img_face_mask_label_list.append( img_face_mask_label )
@@ -73,7 +73,7 @@ img_glasses_name_list = []
 img_glasses_label_list = []
 for per_img_name in all_img_name:
     per_img_path = os.path.join(img_path, per_img_name)
-    img_glasses_label = ','.join(['0','1','1','0','0','0','1','0'])
+    img_glasses_label = ','.join(['0','0','1','1','0','0','0','1','0'])
 
     img_glasses_name_list.append( per_img_path )
     img_glasses_label_list.append( img_glasses_label )
@@ -88,7 +88,7 @@ img_sun_glasses_name_list = []
 img_sun_glasses_label_list = []
 for per_img_name in all_img_name:
     per_img_path = os.path.join(img_path, per_img_name)
-    img_sun_glasses_label = ','.join(['0','1','1','0','0','0','0','1'])
+    img_sun_glasses_label = ','.join(['0','0','1','1','0','0','0','0','1'])
 
     img_sun_glasses_name_list.append( per_img_path )
     img_sun_glasses_label_list.append( img_sun_glasses_label )
