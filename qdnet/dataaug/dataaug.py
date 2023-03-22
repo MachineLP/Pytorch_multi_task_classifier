@@ -52,7 +52,7 @@ def get_transforms(image_size):
         # albumentations.HorizontalFlip(p=0.5),
         albumentations.ImageCompression(quality_lower=90, quality_upper=100),
         # albumentations.ShiftScaleRotate(shift_limit=0.2, scale_limit=0.2, rotate_limit=10, border_mode=0, p=0.7),
-        albumentations.Resize(image_size*1.3, image_size*1.3),
+        albumentations.Resize(int(image_size*1.3), int(image_size*1.3)),
         albumentations.RandomCrop(width=image_size, height=image_size), 
         # albumentations.Resize(image_size, image_size),
         # albumentations.Cutout(max_h_size=int(image_size * 0.4), max_w_size=int(image_size * 0.4), num_holes=1, p=0.5),
