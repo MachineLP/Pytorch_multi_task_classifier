@@ -50,7 +50,7 @@ class QDDataset(Dataset):
         if self.mode == 'test':
             return data
         else:
-            return data, torch.tensor( self.str2np( str(self.csv.iloc[index].target) ) )
+            return data, torch.tensor( self.str2np( str(self.csv.iloc[index].target) )).to(torch.float32)
 
 
 
