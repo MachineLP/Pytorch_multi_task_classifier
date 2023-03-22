@@ -57,8 +57,6 @@ all_img_name = os.listdir(img_path)
 img_face_mask_name_list = []
 img_face_mask_label_list = []
 for per_img_name in all_img_name:
-    if per_img_name not in  ['jpg', 'png']:
-        continue
     per_img_path = os.path.join(img_path, per_img_name)
     img_face_mask_label = ','.join(['0','0','0','1','1','1','0','0'])
 
@@ -74,8 +72,6 @@ all_img_name = os.listdir(img_path)
 img_glasses_name_list = []
 img_glasses_label_list = []
 for per_img_name in all_img_name:
-    if per_img_name not in  ['jpg', 'png']:
-        continue
     per_img_path = os.path.join(img_path, per_img_name)
     img_glasses_label = ','.join(['0','1','1','0','0','0','1','0'])
 
@@ -91,8 +87,6 @@ all_img_name = os.listdir(img_path)
 img_sun_glasses_name_list = []
 img_sun_glasses_label_list = []
 for per_img_name in all_img_name:
-    if per_img_name not in  ['jpg', 'png']:
-        continue
     per_img_path = os.path.join(img_path, per_img_name)
     img_sun_glasses_label = ','.join(['0','1','1','0','0','0','0','1'])
 
