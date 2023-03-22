@@ -77,7 +77,7 @@ for per_img_name in all_img_name:
     if per_img_name not in  ['jpg', 'png']:
         continue
     per_img_path = os.path.join(img_path, per_img_name)
-    img_glasses_label = ','.join(['0','0','0','0','0','1','0','0'])
+    img_glasses_label = ','.join(['0','0','0','0','0','0','1','0'])
 
     img_glasses_name_list.append( per_img_path )
     img_glasses_label_list.append( img_glasses_label )
@@ -94,7 +94,7 @@ for per_img_name in all_img_name:
     if per_img_name not in  ['jpg', 'png']:
         continue
     per_img_path = os.path.join(img_path, per_img_name)
-    img_sun_glasses_label = ','.join(['0','0','0','0','0','1','0','0'])
+    img_sun_glasses_label = ','.join(['0','0','0','0','0','0','0','1'])
 
     img_sun_glasses_name_list.append( per_img_path )
     img_sun_glasses_label_list.append( img_sun_glasses_label )
