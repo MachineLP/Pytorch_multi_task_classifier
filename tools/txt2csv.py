@@ -58,7 +58,7 @@ img_face_mask_name_list = []
 img_face_mask_label_list = []
 for per_img_name in all_img_name:
     per_img_path = os.path.join(img_path, per_img_name)
-    img_face_mask_label = ','.join(['0','0','0','0','1','1','1','0','0'])
+    img_face_mask_label = ','.join(['0','1','0','0','1','1','1','0','0'])
 
     img_face_mask_name_list.append( per_img_path )
     img_face_mask_label_list.append( img_face_mask_label )
@@ -73,7 +73,7 @@ img_glasses_name_list = []
 img_glasses_label_list = []
 for per_img_name in all_img_name:
     per_img_path = os.path.join(img_path, per_img_name)
-    img_glasses_label = ','.join(['0','0','1','1','0','0','0','1','0'])
+    img_glasses_label = ','.join(['0','1','0','0','0','0','0','1','0'])
 
     img_glasses_name_list.append( per_img_path )
     img_glasses_label_list.append( img_glasses_label )
@@ -88,7 +88,7 @@ img_sun_glasses_name_list = []
 img_sun_glasses_label_list = []
 for per_img_name in all_img_name:
     per_img_path = os.path.join(img_path, per_img_name)
-    img_sun_glasses_label = ','.join(['0','0','1','1','0','0','0','0','1'])
+    img_sun_glasses_label = ','.join(['0','1','1','1','0','0','0','0','1'])
 
     img_sun_glasses_name_list.append( per_img_path )
     img_sun_glasses_label_list.append( img_sun_glasses_label )
