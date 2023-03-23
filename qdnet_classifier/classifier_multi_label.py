@@ -36,7 +36,6 @@ def calculate_acuracy_mode_one(model_pred, labels):
     precision = true_predict_num / pred_one_num
     # 模型预测正确的结果中，占所有真实标签的数量
     recall = true_predict_num / target_one_num
- 
     return precision.item(), recall.item()
  
 # 计算准确率——方式2
