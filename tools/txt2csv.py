@@ -22,18 +22,18 @@ fold_list = []
 for line in lines:
     per_line = line.strip().split(',')
     img_name = per_line[0]
-    if img_name in balck_list:
-        break
-    occ_hand_label_list= ','.join( ['0'] + per_line[1:]+ ['0','0','0'] )
-    img_occ_hand_label = occ_hand_label_list
-    img_normal_label = ','.join(['1','0','0','0','0','0','0','0','0'])
+    if img_name not in balck_list:
+        
+        occ_hand_label_list= ','.join( ['0'] + per_line[1:]+ ['0','0','0'] )
+        img_occ_hand_label = occ_hand_label_list
+        img_normal_label = ','.join(['1','0','0','0','0','0','0','0','0'])
 
-    img_occ_hand_name_list.append( str('./data/img/occ_hand/' + img_name) )
-    img_normal_name_list.append( str('./data/img/train_img/' + img_name) )
-    img_occ_hand_label_list.append( str(img_occ_hand_label) )
-    img_normal_label_list.append( str(img_normal_label) )
-    fold_list.append( 0 )
-    fold_list.append( 0 )
+        img_occ_hand_name_list.append( str('./data/img/occ_hand/' + img_name) )
+        img_normal_name_list.append( str('./data/img/train_img/' + img_name) )
+        img_occ_hand_label_list.append( str(img_occ_hand_label) )
+        img_normal_label_list.append( str(img_normal_label) )
+        fold_list.append( 0 )
+        fold_list.append( 0 )
 
 
 f = open("./data/img/occ_objects/data_label.txt")
@@ -44,14 +44,14 @@ img_occ_objects_label_list = []
 for line in lines:
     per_line = line.strip().split(',')
     img_name = per_line[0]
-    if img_name in balck_list:
-        break
-    occ_objects_label_list= ','.join( ['0'] + per_line[1:] + ['0','0','0'] )
-    # occ_label_list = [ int(i) for i in per_line[1:] ]
-    img_occ_objects_label = occ_objects_label_list
-    img_occ_objects_name_list.append( str('./data/img/occ_objects/' + img_name) )
-    img_occ_objects_label_list.append( str(img_occ_objects_label) )
-    fold_list.append( 0 )
+    if img_name not in balck_list:
+        
+        occ_objects_label_list= ','.join( ['0'] + per_line[1:] + ['0','0','0'] )
+        # occ_label_list = [ int(i) for i in per_line[1:] ]
+        img_occ_objects_label = occ_objects_label_list
+        img_occ_objects_name_list.append( str('./data/img/occ_objects/' + img_name) )
+        img_occ_objects_label_list.append( str(img_occ_objects_label) )
+        fold_list.append( 0 )
 
 
 
