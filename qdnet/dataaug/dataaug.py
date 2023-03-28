@@ -58,9 +58,10 @@ def get_transforms(image_size):
             albumentations.GaussNoise(var_limit=(5.0, 30.0)),
         ], p=0.5),
         albumentations.ImageCompression(quality_lower=80, quality_upper=100),
-        albumentations.ShiftScaleRotate(shift_limit=0.0, scale_limit=0.0, rotate_limit=5, border_mode=0, p=0.5),
-        #albumentations.Resize(int(image_size*random.uniform(0.8,1.2)), int(image_size*random.uniform(0.8,1.2))),
-        #albumentations.CenterCrop(width=image_size, height=image_size, p=0.5), 
+        albumentations.ShiftScaleRotate(shift_limit=0.0, scale_limit=0.0, rotate_limit=10, border_mode=0, p=0.5),
+        albumentations.Resize(int(image_size*random.uniform(0.8,1.2)), int(image_size*random.uniform(0.8,1.2))),
+        # albumentations.CenterCrop(width=image_size, height=image_size, p=0.5), 
+        albumentations.RandomCrop(width=image_size, height=image_size, p=0.5), 
         albumentations.Resize(image_size, image_size),
         albumentations.Normalize()
     ])
