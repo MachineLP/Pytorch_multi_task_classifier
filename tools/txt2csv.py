@@ -35,12 +35,13 @@ for line in lines:
         fold_list.append( 0 )
         fold_list.append( 0 )
 
+black_list3 = ['10106.jpg', '28372.jpg', '18705.jpg', '10268.jpg', '24892.jpg', '6290.jpg', '4907.jpg', '25607.jpg', 'data_label.txt', '28380.jpg', '8054.jpg', '24877.jpg', '17260.jpg', '12993.jpg', '21367.jpg', '5565.jpg', '5028.jpg', '5339.jpg', '5468.jpg', '19694.jpg', '21574.jpg', '11909.jpg', '5234.jpg', '5211.jpg', '29882.jpg', '5624.jpg', '22260.jpg', '22311.jpg', '24538.jpg', '28626.jpg', '4831.jpg', '7749.jpg', '936.jpg', '7650.jpg', '20753.jpg', '21418.jpg', '2979.jpg', '3705.jpg', '19006.jpg', '12580.jpg', '4977.jpg', '10324.jpg', '25148.jpg', '25224.jpg']
 f = open("./data/img/occ_hand_crop/data_label.txt")
 lines = f.readlines()
 for line in lines:
     per_line = line.strip().split(',')
     img_name = per_line[0]
-    if img_name not in balck_list:
+    if img_name not in balck_list+black_list3:
         
         occ_hand_label_list= ','.join( ['0'] + per_line[1:]+ ['0','0','0'] )
         img_occ_hand_label = occ_hand_label_list
@@ -77,7 +78,7 @@ lines = f.readlines()
 for line in lines:
     per_line = line.strip().split(',')
     img_name = per_line[0]
-    if img_name not in balck_list:
+    if img_name not in balck_list+black_list3:
 
         occ_objects_label_list= ','.join( ['0'] + per_line[1:] + ['0','0','0'] )
         # occ_label_list = [ int(i) for i in per_line[1:] ]
@@ -111,7 +112,7 @@ lines = f.readlines()
 for line in lines:
     per_line = line.strip().split(',')
     img_name = per_line[0]
-    if img_name not in balck_list:
+    if img_name not in balck_list+black_list3:
 
         occ_others_label_list= ','.join( ['0'] + per_line[1:] + ['0','0','0'] )
         # occ_label_list = [ int(i) for i in per_line[1:] ]
@@ -145,7 +146,7 @@ lines = f.readlines()
 for line in lines:
     per_line = line.strip().split(',')
     img_name = per_line[0]
-    if img_name not in balck_list:
+    if img_name not in balck_list+black_list3:
 
         occ_hand_normal_label_list= ','.join( ['0'] + per_line[1:] + ['0','0','0'] )
         # occ_label_list = [ int(i) for i in per_line[1:] ]
@@ -155,7 +156,7 @@ for line in lines:
         fold_list.append( 0 )
 
 
-black_list2 = ['22776.jpg', '11617.jpg', '1_0_1.jpg', '22909.jpg', '19485.jpg', '16373.jpg', 'jdasgjkadsgjaddadg.png', '0_0_006vBMIgjw1fabb8ghpxrj30im0cgjt5.jpg', '16438.jpg', '8853.jpg', '26299.jpg', '20754.jpg', 'OK-mask_0109.jpg', '6557.jpg', '0_0_5.jpg', '15343.jpg', '6010.jpg', '20055.jpg']
+black_list2 = black_list3 + ['22776.jpg', '11617.jpg', '1_0_1.jpg', '22909.jpg', '19485.jpg', '16373.jpg', 'jdasgjkadsgjaddadg.png', '0_0_006vBMIgjw1fabb8ghpxrj30im0cgjt5.jpg', '16438.jpg', '8853.jpg', '26299.jpg', '20754.jpg', 'OK-mask_0109.jpg', '6557.jpg', '0_0_5.jpg', '15343.jpg', '6010.jpg', '20055.jpg']
 # face mask
 img_path = "./data/img/face_mask"
 all_img_name = os.listdir(img_path)
