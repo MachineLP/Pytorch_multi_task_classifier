@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+import cv2
 from unicodedata import category
 from pandas.core.frame import DataFrame
 import numpy as np
@@ -35,7 +36,7 @@ for line in lines:
         fold_list.append( 0 )
         fold_list.append( 0 )
 
-black_list3 = ['10106.jpg', '28372.jpg', '18705.jpg', '10268.jpg', '24892.jpg', '6290.jpg', '4907.jpg', '25607.jpg', 'data_label.txt', '28380.jpg', '8054.jpg', '24877.jpg', '17260.jpg', '12993.jpg', '21367.jpg', '5565.jpg', '5028.jpg', '5339.jpg', '5468.jpg', '19694.jpg', '21574.jpg', '11909.jpg', '5234.jpg', '5211.jpg', '29882.jpg', '5624.jpg', '22260.jpg', '22311.jpg', '24538.jpg', '28626.jpg', '4831.jpg', '7749.jpg', '936.jpg', '7650.jpg', '20753.jpg', '21418.jpg', '2979.jpg', '3705.jpg', '19006.jpg', '12580.jpg', '4977.jpg', '10324.jpg', '25148.jpg', '25224.jpg']
+black_list3 = ['16500.jpg', '9139.jpg', '4585.jpg', '10106.jpg', '28372.jpg', '18705.jpg', '10268.jpg', '24892.jpg', '6290.jpg', '4907.jpg', '25607.jpg', 'data_label.txt', '28380.jpg', '8054.jpg', '24877.jpg', '17260.jpg', '12993.jpg', '21367.jpg', '5565.jpg', '5028.jpg', '5339.jpg', '5468.jpg', '19694.jpg', '21574.jpg', '11909.jpg', '5234.jpg', '5211.jpg', '29882.jpg', '5624.jpg', '22260.jpg', '22311.jpg', '24538.jpg', '28626.jpg', '4831.jpg', '7749.jpg', '936.jpg', '7650.jpg', '20753.jpg', '21418.jpg', '2979.jpg', '3705.jpg', '19006.jpg', '12580.jpg', '4977.jpg', '10324.jpg', '25148.jpg', '25224.jpg']
 f = open("./data/img/occ_hand_crop/data_label.txt")
 lines = f.readlines()
 for line in lines:
@@ -46,13 +47,20 @@ for line in lines:
         occ_hand_label_list= ','.join( ['0'] + per_line[1:]+ ['0','0','0'] )
         img_occ_hand_label = occ_hand_label_list
         img_normal_label = ','.join(['1','0','0','0','0','0','0','0','0'])
-
-        img_occ_hand_name_list.append( str('./data/img/occ_hand_crop/' + img_name) )
-        img_normal_name_list.append( str('./data/img/train_img_crop/' + img_name) )
-        img_occ_hand_label_list.append( str(img_occ_hand_label) )
-        img_normal_label_list.append( str(img_normal_label) )
-        fold_list.append( 0 )
-        fold_list.append( 0 )
+        try:
+            #img = cv2.imread( str('./data/img/train_img_crop/' + img_name) )
+            #if img is None:
+            #    print (img_name)
+            img_occ_hand_name_list.append( str('./data/img/occ_hand_crop/' + img_name) )
+            img_normal_name_list.append( str('./data/img/train_img_crop/' + img_name) )
+            img_occ_hand_label_list.append( str(img_occ_hand_label) )
+            img_normal_label_list.append( str(img_normal_label) )
+            fold_list.append( 0 )
+            fold_list.append( 0 )
+        except:
+            print (img_name)
+            continue
+        
 
 
 f = open("./data/img/occ_objects/data_label.txt")
