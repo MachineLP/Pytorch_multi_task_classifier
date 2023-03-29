@@ -48,7 +48,7 @@ for line in lines:
         img_normal_label = ','.join(['1','0','0','0','0','0','0','0','0'])
 
         img_occ_hand_name_list.append( str('./data/img/occ_hand_crop/' + img_name) )
-        img_normal_name_list.append( str('./data/img/occ_hand_crop/' + img_name) )
+        img_normal_name_list.append( str('./data/img/train_img_crop/' + img_name) )
         img_occ_hand_label_list.append( str(img_occ_hand_label) )
         img_normal_label_list.append( str(img_normal_label) )
         fold_list.append( 0 )
