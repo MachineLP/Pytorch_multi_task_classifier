@@ -3,8 +3,9 @@ import os
 import cv2
 
 
-video_path = "./data/download_images/"
+video_path = "./data/img/"
 all_labels_path = os.listdir(video_path)
+black_list3 = []
 
 for per_label_path in all_labels_path:
     if 'csv' in per_label_path:
@@ -16,11 +17,14 @@ for per_label_path in all_labels_path:
         try:
             img = cv2.imread( per_img_path )
             if img is None:
-                os.system( "rm -r '{}'".format(per_img_path) )
+                black_list3.append( per_image_path )
+                # os.system( "rm -r '{}'".format(per_img_path) )
                 print (222)
         except:
-            os.system( "rm -r {}".format(per_img_path) )
+            black_list3.append( per_image_path )
+            # os.system( "rm -r {}".format(per_img_path) )
             print (222)
             continue
         
 print ( "Finish!!" )
+print ( list(set( black_list3 )) )

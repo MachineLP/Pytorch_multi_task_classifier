@@ -35,6 +35,24 @@ for line in lines:
         fold_list.append( 0 )
         fold_list.append( 0 )
 
+f = open("./data/img/occ_hand_crop/data_label.txt")
+lines = f.readlines()
+for line in lines:
+    per_line = line.strip().split(',')
+    img_name = per_line[0]
+    if img_name not in balck_list:
+        
+        occ_hand_label_list= ','.join( ['0'] + per_line[1:]+ ['0','0','0'] )
+        img_occ_hand_label = occ_hand_label_list
+        img_normal_label = ','.join(['1','0','0','0','0','0','0','0','0'])
+
+        img_occ_hand_name_list.append( str('./data/img/occ_hand_crop/' + img_name) )
+        img_normal_name_list.append( str('./data/img/occ_hand_crop/' + img_name) )
+        img_occ_hand_label_list.append( str(img_occ_hand_label) )
+        img_normal_label_list.append( str(img_normal_label) )
+        fold_list.append( 0 )
+        fold_list.append( 0 )
+
 
 f = open("./data/img/occ_objects/data_label.txt")
 lines = f.readlines()
@@ -53,6 +71,20 @@ for line in lines:
         img_occ_objects_label_list.append( str(img_occ_objects_label) )
         fold_list.append( 0 )
 
+f = open("./data/img/occ_objects_crop/data_label.txt")
+lines = f.readlines()
+
+for line in lines:
+    per_line = line.strip().split(',')
+    img_name = per_line[0]
+    if img_name not in balck_list:
+
+        occ_objects_label_list= ','.join( ['0'] + per_line[1:] + ['0','0','0'] )
+        # occ_label_list = [ int(i) for i in per_line[1:] ]
+        img_occ_objects_label = occ_objects_label_list
+        img_occ_objects_name_list.append( str('./data/img/occ_objects_crop/' + img_name) )
+        img_occ_objects_label_list.append( str(img_occ_objects_label) )
+        fold_list.append( 0 )
 
 
 f = open("./data/img/occ_others/data_label.txt")
@@ -69,6 +101,22 @@ for line in lines:
         # occ_label_list = [ int(i) for i in per_line[1:] ]
         img_occ_others_label = occ_others_label_list
         img_occ_others_name_list.append( str('./data/img/occ_others/' + img_name) )
+        img_occ_others_label_list.append( str(img_occ_others_label) )
+        fold_list.append( 0 )
+
+
+f = open("./data/img/occ_others_crop/data_label.txt")
+lines = f.readlines()
+
+for line in lines:
+    per_line = line.strip().split(',')
+    img_name = per_line[0]
+    if img_name not in balck_list:
+
+        occ_others_label_list= ','.join( ['0'] + per_line[1:] + ['0','0','0'] )
+        # occ_label_list = [ int(i) for i in per_line[1:] ]
+        img_occ_others_label = occ_others_label_list
+        img_occ_others_name_list.append( str('./data/img/occ_others_crop/' + img_name) )
         img_occ_others_label_list.append( str(img_occ_others_label) )
         fold_list.append( 0 )
 
@@ -91,6 +139,23 @@ for line in lines:
         fold_list.append( 0 )
 
 
+f = open("./data/img/occ_hand_normal_crop/data_label.txt")
+lines = f.readlines()
+
+for line in lines:
+    per_line = line.strip().split(',')
+    img_name = per_line[0]
+    if img_name not in balck_list:
+
+        occ_hand_normal_label_list= ','.join( ['0'] + per_line[1:] + ['0','0','0'] )
+        # occ_label_list = [ int(i) for i in per_line[1:] ]
+        img_occ_hand_normal_label = occ_hand_normal_label_list
+        img_occ_hand_normal_name_list.append( str('./data/img/occ_hand_normal_crop/' + img_name) )
+        img_occ_hand_normal_label_list.append( str(img_occ_hand_normal_label) )
+        fold_list.append( 0 )
+
+
+black_list2 = ['22776.jpg', '11617.jpg', '1_0_1.jpg', '22909.jpg', '19485.jpg', '16373.jpg', 'jdasgjkadsgjaddadg.png', '0_0_006vBMIgjw1fabb8ghpxrj30im0cgjt5.jpg', '16438.jpg', '8853.jpg', '26299.jpg', '20754.jpg', 'OK-mask_0109.jpg', '6557.jpg', '0_0_5.jpg', '15343.jpg', '6010.jpg', '20055.jpg']
 # face mask
 img_path = "./data/img/face_mask"
 all_img_name = os.listdir(img_path)
@@ -104,6 +169,19 @@ for per_img_name in all_img_name:
     img_face_mask_name_list.append( per_img_path )
     img_face_mask_label_list.append( img_face_mask_label )
     fold_list.append( 0 )
+
+
+img_path = "./data/img/face_mask_crop"
+all_img_name = os.listdir(img_path)
+
+for per_img_name in all_img_name:
+    if per_img_name not in black_list2:
+        per_img_path = os.path.join(img_path, per_img_name)
+        img_face_mask_label = ','.join(['0','1','0','0','1','1','1','0','0'])
+
+        img_face_mask_name_list.append( per_img_path )
+        img_face_mask_label_list.append( img_face_mask_label )
+        fold_list.append( 0 )
 
 
 # glasses 
@@ -120,6 +198,19 @@ for per_img_name in all_img_name:
     img_glasses_label_list.append( img_glasses_label )
     fold_list.append( 0 )
 
+img_path = "./data/img/glasses_crop"
+all_img_name = os.listdir(img_path)
+
+for per_img_name in all_img_name:
+
+    if per_img_name not in black_list2:
+        per_img_path = os.path.join(img_path, per_img_name)
+        img_glasses_label = ','.join(['0','1','0','0','0','0','0','1','0'])
+
+        img_glasses_name_list.append( per_img_path )
+        img_glasses_label_list.append( img_glasses_label )
+        fold_list.append( 0 )
+
 
 # sun glasses 
 img_path = "./data/img/sun_glasses"
@@ -134,6 +225,19 @@ for per_img_name in all_img_name:
     img_sun_glasses_name_list.append( per_img_path )
     img_sun_glasses_label_list.append( img_sun_glasses_label )
     fold_list.append( 0 )
+
+img_path = "./data/img/sun_glasses_crop"
+all_img_name = os.listdir(img_path)
+
+for per_img_name in all_img_name:
+
+    if per_img_name not in black_list2:
+        per_img_path = os.path.join(img_path, per_img_name)
+        img_sun_glasses_label = ','.join(['0','1','1','1','0','0','0','0','1'])
+
+        img_sun_glasses_name_list.append( per_img_path )
+        img_sun_glasses_label_list.append( img_sun_glasses_label )
+        fold_list.append( 0 )
 
 
 # face mask glasses 
@@ -168,8 +272,23 @@ for per_img_name in all_img_name:
 
 
 
-all_img_path_list = img_occ_hand_name_list + img_normal_name_list + img_occ_objects_name_list + img_occ_others_name_list + img_occ_hand_normal_name_list + img_face_mask_name_list + img_glasses_name_list + img_sun_glasses_name_list + img_face_mask_glasses_name_list + img_face_mask_sun_glasses_name_list
-img_label_list = img_occ_hand_label_list + img_normal_label_list + img_occ_objects_label_list + img_occ_others_label_list + img_occ_hand_normal_label_list + img_face_mask_label_list + img_glasses_label_list + img_sun_glasses_label_list + img_face_mask_glasses_label_list + img_face_mask_sun_glasses_label_list
+# face mask sun glasses 
+img_path = "./data/img/occ_face_right_nose_mouth"
+all_img_name = os.listdir(img_path)
+
+img_occ_face_right_nose_mouth_name_list = []
+img_occ_face_right_nose_mouth_label_list = []
+for per_img_name in all_img_name:
+    per_img_path = os.path.join(img_path, per_img_name)
+    img_occ_face_right_nose_mouth_label = ','.join(['0','1','0','1','1','1','0','0','0'])
+
+    img_occ_face_right_nose_mouth_name_list.append( per_img_path )
+    img_occ_face_right_nose_mouth_label_list.append( img_occ_face_right_nose_mouth_label )
+    fold_list.append( 0 )
+
+
+all_img_path_list = img_occ_hand_name_list + img_normal_name_list + img_occ_objects_name_list + img_occ_others_name_list + img_occ_hand_normal_name_list + img_face_mask_name_list + img_glasses_name_list + img_sun_glasses_name_list + img_face_mask_glasses_name_list + img_face_mask_sun_glasses_name_list + img_occ_face_right_nose_mouth_name_list
+img_label_list = img_occ_hand_label_list + img_normal_label_list + img_occ_objects_label_list + img_occ_others_label_list + img_occ_hand_normal_label_list + img_face_mask_label_list + img_glasses_label_list + img_sun_glasses_label_list + img_face_mask_glasses_label_list + img_face_mask_sun_glasses_label_list + img_occ_face_right_nose_mouth_label_list
 
 
 res = DataFrame()
