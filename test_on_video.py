@@ -140,7 +140,18 @@ if __name__ == '__main__' :
         if len( bbox ) > 0:
             box = bbox[0]
             # print (">>>>>", box)
-            src_img = img[ int(box[0]):int(box[2]), int(box[1]):int(box[3]), : ]
+            y1, x1, y2, x2 = int(box[0]), int(box[1]), int(box[2]), int(box[3])
+            h = y2-y1
+            w = x2 -x1
+            if h>w:
+                gap = (h-w)//2
+                y1, x1, y2, x2 = int(box[0]), int(box[1])-gap, int(box[2]), int(box[3])+gap
+            else:
+                gap = (w-h)//2
+                y1, x1, y2, x2 = int(box[0])-gap, int(box[1]), int(box[2])+gap, int(box[3])
+
+            y1, x1, y2, x2 = y1-50, x1-30, y2+20, x2+30
+            src_img = img[ y1:y2, x1:x2, : ]
             # src_img = cv2.cvtColor(src_img, cv2.COLOR_BGR2RGB)
             cv2.imwrite( "./test.jpg", src_img )
 
@@ -156,10 +167,9 @@ if __name__ == '__main__' :
             cv2.putText(img, "Occ-glasses    :{}".format( probs[0][7].cpu().detach().numpy()), (20, 160), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1, cv2.LINE_AA)
             cv2.putText(img, "Occ-sun-glasses:{}".format( probs[0][8].cpu().detach().numpy()), (20, 180), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1, cv2.LINE_AA)
 
-
-            y1, x1, y2 , x2 = int(box[0]),int(box[1]),int(box[2]),int(box[3])
             frame = cv2.rectangle( img, (x1, y1), (x2,y2), (255,0,0), 2 )
 
+            src_img = img[ int(box[0]):int(box[2]), int(box[1]):int(box[3]), : ]
             img1 = cv2.resize(src_img, (112, 112))
             image_data = img1.transpose(2, 0, 1)[np.newaxis].astype(np.float32) / 255
             output = session.run([], {input_name: image_data})[1]
