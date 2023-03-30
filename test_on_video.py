@@ -143,14 +143,17 @@ if __name__ == '__main__' :
             y1, x1, y2, x2 = int(box[0]), int(box[1]), int(box[2]), int(box[3])
             h = y2-y1
             w = x2 -x1
+            y1, x1, y2, x2 = int(y1-h*0.2), x1, int(y2+h*0.1), x2
+            h = y2-y1
+            w = x2 -x1
             if h>w:
                 gap = (h-w)//2
-                y1, x1, y2, x2 = int(box[0]), int(box[1])-gap, int(box[2]), int(box[3])+gap
+                y1, x1, y2, x2 = y1, x1-gap, y2, x2+gap
             else:
                 gap = (w-h)//2
-                y1, x1, y2, x2 = int(box[0])-gap, int(box[1]), int(box[2])+gap, int(box[3])
+                y1, x1, y2, x2 = y1-gap, x1, y2+gap, x2
 
-            y1, x1, y2, x2 = y1-50, x1-30, y2+20, x2+30
+            # y1, x1, y2, x2 = y1-50, x1-30, y2+20, x2+30
             src_img = img[ y1:y2, x1:x2, : ]
             # src_img = cv2.cvtColor(src_img, cv2.COLOR_BGR2RGB)
             cv2.imwrite( "./test.jpg", src_img )
