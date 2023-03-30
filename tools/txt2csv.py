@@ -25,8 +25,9 @@ for line in lines:
     img_name = per_line[0]
     if img_name not in balck_list:
         
-        occ_hand_label_list= ','.join( ['0'] + per_line[1:]+ ['0','0','0'] )
-        img_occ_hand_label = occ_hand_label_list
+        occ_hand_label_list= ['0'] + per_line[1:]+ ['0','0','0'] 
+        occ_hand_label_list[1] = '1'
+        img_occ_hand_label = ','.join( occ_hand_label_list )
         img_normal_label = ','.join(['1','0','0','0','0','0','0','0','0'])
 
         img_occ_hand_name_list.append( str('./data/img/occ_hand/' + img_name) )
@@ -73,9 +74,10 @@ for line in lines:
     img_name = per_line[0]
     if img_name not in balck_list:
 
-        occ_objects_label_list= ','.join( ['0'] + per_line[1:] + ['0','0','0'] )
+        occ_objects_label_list = ['0'] + per_line[1:] + ['0','0','0']
+        occ_objects_label_list[1] = '1'
         # occ_label_list = [ int(i) for i in per_line[1:] ]
-        img_occ_objects_label = occ_objects_label_list
+        img_occ_objects_label = ','.join( occ_objects_label_list )
         img_occ_objects_name_list.append( str('./data/img/occ_objects/' + img_name) )
         img_occ_objects_label_list.append( str(img_occ_objects_label) )
         fold_list.append( 0 )
@@ -107,9 +109,10 @@ for line in lines:
     img_name = per_line[0]
     if img_name not in balck_list:
 
-        occ_others_label_list= ','.join( ['0'] + per_line[1:] + ['0','0','0'] )
+        occ_others_label_list= ['0'] + per_line[1:] + ['0','0','0']
+        occ_others_label_list[1] = '1'
         # occ_label_list = [ int(i) for i in per_line[1:] ]
-        img_occ_others_label = occ_others_label_list
+        img_occ_others_label = ','.join( occ_others_label_list )
         img_occ_others_name_list.append( str('./data/img/occ_others/' + img_name) )
         img_occ_others_label_list.append( str(img_occ_others_label) )
         fold_list.append( 0 )
@@ -141,9 +144,10 @@ for line in lines:
     img_name = per_line[0]
     if img_name not in balck_list:
 
-        occ_hand_normal_label_list= ','.join( ['0'] + per_line[1:] + ['0','0','0'] )
+        occ_hand_normal_label_list= ['0'] + per_line[1:] + ['0','0','0']
+        occ_hand_normal_label_list[1] = '1'
         # occ_label_list = [ int(i) for i in per_line[1:] ]
-        img_occ_hand_normal_label = occ_hand_normal_label_list
+        img_occ_hand_normal_label = ','.join( occ_hand_normal_label_list )
         img_occ_hand_normal_name_list.append( str('./data/img/occ_hand_normal/' + img_name) )
         img_occ_hand_normal_label_list.append( str(img_occ_hand_normal_label) )
         fold_list.append( 0 )
