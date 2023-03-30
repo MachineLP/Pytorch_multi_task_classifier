@@ -8,3 +8,13 @@ Thu Mar 30 11:57:11 2023 Fold 0, Epoch 2, lr: 0.0003000, train loss: 0.06911, va
 Thu Mar 30 12:04:45 2023 Fold 0, Epoch 3, lr: 0.0002991, train loss: 0.05378, valid loss: 0.04456, precision: 0.9712, recall: 0.968288.
 Thu Mar 30 12:12:11 2023 Fold 0, Epoch 4, lr: 0.0002965, train loss: 0.04732, valid loss: 0.04033, precision: 0.9711, recall: 0.972568.
 Thu Mar 30 12:19:41 2023 Fold 0, Epoch 5, lr: 0.0002921, train loss: 0.04203, valid loss: 0.04218, precision: 0.9684, recall: 0.976203.
+Thu Mar 30 12:27:32 2023 Fold 0, Epoch 6, lr: 0.0002861, train loss: 0.03857, valid loss: 0.04034, precision: 0.9704, recall: 0.976547.
+Thu Mar 30 12:35:56 2023 Fold 0, Epoch 7, lr: 0.0002785, train loss: 0.03554, valid loss: 0.04202, precision: 0.9749, recall: 0.975919.
+Thu Mar 30 12:45:42 2023 Fold 0, Epoch 8, lr: 0.0002694, train loss: 0.03251, valid loss: 0.03843, precision: 0.9691, recall: 0.976682.
+Thu Mar 30 12:56:01 2023 Fold 0, Epoch 9, lr: 0.0002589, train loss: 0.02924, valid loss: 0.03815, precision: 0.9725, recall: 0.978739.
+Thu Mar 30 13:04:10 2023 Fold 0, Epoch 10, lr: 0.0002471, train loss: 0.02739, valid loss: 0.03725, precision: 0.9745, recall: 0.978076.
+Thu Mar 30 13:12:13 2023 Fold 0, Epoch 11, lr: 0.0002342, train loss: 0.02465, valid loss: 0.03513, precision: 0.9795, recall: 0.978070.
+Thu Mar 30 13:20:21 2023 Fold 0, Epoch 12, lr: 0.0002203, train loss: 0.02266, valid loss: 0.03640, precision: 0.9771, recall: 0.979084.
+Thu Mar 30 13:28:27 2023 Fold 0, Epoch 13, lr: 0.0002055, train loss: 0.02061, valid loss: 0.03839, precision: 0.9806, recall: 0.978176.
+Thu Mar 30 13:36:30 2023 Fold 0, Epoch 14, lr: 0.0001901, train loss: 0.01885, valid loss: 0.04080, precision: 0.9767, recall: 0.980428.
+Thu Mar 30 13:43:51 2023 Fold 0, Epoch 15, lr: 0.0001743, train loss: 0.01801, valid loss: 0.04131, precision: 0.9792, recall: 0.979366.
