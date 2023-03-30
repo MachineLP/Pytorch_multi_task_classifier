@@ -35,7 +35,7 @@ for line in lines:
         img_normal_label_list.append( str(img_normal_label) )
         fold_list.append( 0 )
         fold_list.append( 0 )
-
+'''
 black_list3 = ['16500.jpg', '9139.jpg', '4585.jpg', '10106.jpg', '28372.jpg', '18705.jpg', '10268.jpg', '24892.jpg', '6290.jpg', '4907.jpg', '25607.jpg', 'data_label.txt', '28380.jpg', '8054.jpg', '24877.jpg', '17260.jpg', '12993.jpg', '21367.jpg', '5565.jpg', '5028.jpg', '5339.jpg', '5468.jpg', '19694.jpg', '21574.jpg', '11909.jpg', '5234.jpg', '5211.jpg', '29882.jpg', '5624.jpg', '22260.jpg', '22311.jpg', '24538.jpg', '28626.jpg', '4831.jpg', '7749.jpg', '936.jpg', '7650.jpg', '20753.jpg', '21418.jpg', '2979.jpg', '3705.jpg', '19006.jpg', '12580.jpg', '4977.jpg', '10324.jpg', '25148.jpg', '25224.jpg']
 f = open("./data/img/occ_hand_crop/data_label.txt")
 lines = f.readlines()
@@ -60,7 +60,7 @@ for line in lines:
         except:
             print (img_name)
             continue
-        
+'''     
 
 
 f = open("./data/img/occ_objects/data_label.txt")
@@ -80,6 +80,7 @@ for line in lines:
         img_occ_objects_label_list.append( str(img_occ_objects_label) )
         fold_list.append( 0 )
 
+'''
 f = open("./data/img/occ_objects_crop/data_label.txt")
 lines = f.readlines()
 
@@ -94,7 +95,7 @@ for line in lines:
         img_occ_objects_name_list.append( str('./data/img/occ_objects_crop/' + img_name) )
         img_occ_objects_label_list.append( str(img_occ_objects_label) )
         fold_list.append( 0 )
-
+'''
 
 f = open("./data/img/occ_others/data_label.txt")
 lines = f.readlines()
@@ -113,7 +114,7 @@ for line in lines:
         img_occ_others_label_list.append( str(img_occ_others_label) )
         fold_list.append( 0 )
 
-
+'''
 f = open("./data/img/occ_others_crop/data_label.txt")
 lines = f.readlines()
 
@@ -128,7 +129,7 @@ for line in lines:
         img_occ_others_name_list.append( str('./data/img/occ_others_crop/' + img_name) )
         img_occ_others_label_list.append( str(img_occ_others_label) )
         fold_list.append( 0 )
-
+'''
 
 f = open("./data/img/occ_hand_normal/data_label.txt")
 lines = f.readlines()
@@ -147,7 +148,7 @@ for line in lines:
         img_occ_hand_normal_label_list.append( str(img_occ_hand_normal_label) )
         fold_list.append( 0 )
 
-
+'''
 f = open("./data/img/occ_hand_normal_crop/data_label.txt")
 lines = f.readlines()
 
@@ -163,8 +164,9 @@ for line in lines:
         img_occ_hand_normal_label_list.append( str(img_occ_hand_normal_label) )
         fold_list.append( 0 )
 
-
 black_list2 = black_list3 + ['22776.jpg', '11617.jpg', '1_0_1.jpg', '22909.jpg', '19485.jpg', '16373.jpg', 'jdasgjkadsgjaddadg.png', '0_0_006vBMIgjw1fabb8ghpxrj30im0cgjt5.jpg', '16438.jpg', '8853.jpg', '26299.jpg', '20754.jpg', 'OK-mask_0109.jpg', '6557.jpg', '0_0_5.jpg', '15343.jpg', '6010.jpg', '20055.jpg']
+'''
+
 # face mask
 img_path = "./data/img/face_mask"
 all_img_name = os.listdir(img_path)
@@ -179,7 +181,7 @@ for per_img_name in all_img_name:
     img_face_mask_label_list.append( img_face_mask_label )
     fold_list.append( 0 )
 
-
+'''
 img_path = "./data/img/face_mask_crop"
 all_img_name = os.listdir(img_path)
 
@@ -191,7 +193,7 @@ for per_img_name in all_img_name:
         img_face_mask_name_list.append( per_img_path )
         img_face_mask_label_list.append( img_face_mask_label )
         fold_list.append( 0 )
-
+'''
 
 # glasses 
 img_path = "./data/img/glasses"
@@ -207,6 +209,7 @@ for per_img_name in all_img_name:
     img_glasses_label_list.append( img_glasses_label )
     fold_list.append( 0 )
 
+'''
 img_path = "./data/img/glasses_crop"
 all_img_name = os.listdir(img_path)
 
@@ -219,7 +222,7 @@ for per_img_name in all_img_name:
         img_glasses_name_list.append( per_img_path )
         img_glasses_label_list.append( img_glasses_label )
         fold_list.append( 0 )
-
+'''
 
 # sun glasses 
 img_path = "./data/img/sun_glasses"
@@ -234,7 +237,7 @@ for per_img_name in all_img_name:
     img_sun_glasses_name_list.append( per_img_path )
     img_sun_glasses_label_list.append( img_sun_glasses_label )
     fold_list.append( 0 )
-
+'''
 img_path = "./data/img/sun_glasses_crop"
 all_img_name = os.listdir(img_path)
 
@@ -247,7 +250,7 @@ for per_img_name in all_img_name:
         img_sun_glasses_name_list.append( per_img_path )
         img_sun_glasses_label_list.append( img_sun_glasses_label )
         fold_list.append( 0 )
-
+'''
 
 # face mask glasses 
 img_path = "./data/img/face_mask_glasses"

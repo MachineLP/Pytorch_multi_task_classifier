@@ -58,7 +58,7 @@ def get_transforms(image_size):
             albumentations.GaussNoise(var_limit=(5.0, 30.0)),
         ], p=0.5),
         albumentations.ImageCompression(quality_lower=80, quality_upper=100, p=0.5),
-        albumentations.ShiftScaleRotate(shift_limit=0.0, scale_limit=(-0.1, 0.3), rotate_limit=10, border_mode=0, p=0.5),
+        albumentations.ShiftScaleRotate(shift_limit=0.05, scale_limit=(-0.2, 0.5), rotate_limit=30, border_mode=1, p=0.5),
         # albumentations.Resize(int(image_size*random.uniform(0.8,1.2)), int(image_size*random.uniform(0.8,1.2))),
         # albumentations.CenterCrop(width=image_size, height=image_size, p=0.5), 
         # albumentations.RandomCrop(width=image_size, height=image_size, p=0.5), 
@@ -74,3 +74,8 @@ def get_transforms(image_size):
     return transforms_train, transforms_val
 
 
+if __name__ == '__main__':
+    image = cv2.imread( 'img_name' )
+    for i in range(200):
+        image2 = albumentations.ShiftScaleRotate(shift_limit=0.05, scale_limit=(-0.2, 0.5), rotate_limit=30, border_mode=1, p=0.5)
+        cv2.imwrite( "./test_img/test_{}.jpg".format(i), image2 )
