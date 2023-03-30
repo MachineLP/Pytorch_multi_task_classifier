@@ -15,6 +15,7 @@ import warnings
 import numpy as np
 from typing import Optional
 from typing import List
+from mtcnn import MTCNN
 
 
 
@@ -67,7 +68,7 @@ class MultiLabelModel(nn.Module):
         super(MultiLabelModel, self).__init__()
 
         self.model_classifier = create_model( classifier, pretrained=pretrained, )
-        last_channel = 512
+        last_channel = 512  # 512, 1024, 2048
         self.pool = nn.AdaptiveAvgPool2d((1, 1))
         self.output = nn.Sequential(
                      nn.Dropout(p=0.5),
