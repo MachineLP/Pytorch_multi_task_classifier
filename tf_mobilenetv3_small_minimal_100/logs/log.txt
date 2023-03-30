@@ -118,3 +118,9 @@ Thu Mar 30 08:41:04 2023 Fold 3, Epoch 6, lr: 0.0002861, train loss: 0.04109, va
 Thu Mar 30 08:52:02 2023 Fold 3, Epoch 7, lr: 0.0002785, train loss: 0.03804, valid loss: 0.04301, precision: 0.9705, recall: 0.971775.
 Thu Mar 30 09:03:40 2023 Fold 3, Epoch 8, lr: 0.0002694, train loss: 0.03543, valid loss: 0.04292, precision: 0.9612, recall: 0.978511.
 Thu Mar 30 09:16:07 2023 Fold 3, Epoch 9, lr: 0.0002589, train loss: 0.03253, valid loss: 0.04244, precision: 0.9660, recall: 0.978295.
+Thu Mar 30 09:27:37 2023 Fold 3, Epoch 10, lr: 0.0002471, train loss: 0.03040, valid loss: 0.04051, precision: 0.9696, recall: 0.974605.
+Thu Mar 30 09:38:49 2023 Fold 3, Epoch 11, lr: 0.0002342, train loss: 0.02817, valid loss: 0.04169, precision: 0.9705, recall: 0.975314.
+Thu Mar 30 09:49:52 2023 Fold 3, Epoch 12, lr: 0.0002203, train loss: 0.02620, valid loss: 0.04267, precision: 0.9736, recall: 0.971848.
+Thu Mar 30 10:00:53 2023 Fold 3, Epoch 13, lr: 0.0002055, train loss: 0.02450, valid loss: 0.04180, precision: 0.9706, recall: 0.975341.
+Thu Mar 30 10:11:56 2023 Fold 3, Epoch 14, lr: 0.0001901, train loss: 0.02281, valid loss: 0.04142, precision: 0.9721, recall: 0.976269.
+Thu Mar 30 10:22:44 2023 Fold 3, Epoch 15, lr: 0.0001743, train loss: 0.02087, valid loss: 0.04459, precision: 0.9737, recall: 0.976252.
