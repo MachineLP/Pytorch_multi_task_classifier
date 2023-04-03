@@ -4,7 +4,7 @@ import threading
 class Constant():
 
     RESNEST_LIST = ['resnest50', 'resnest101', 'resnest200', 'resnest269']
-    RESNET_LIST = ['resnet18', 'resnet34', 'resnet50', 'tf_mobilenetv3_small_minimal_100'] 
+    RESNET_LIST = ['resnet18', 'resnet34', 'resnet50', 'tf_mobilenetv3_small_minimal_100', 'mobilenetv3_small_100', 'resnet09'] 
     SERESNEXT_LIST = ['seresnext101']
     GEFFNET_LIST = ['GenEfficientNet', 'mnasnet_050', 'mnasnet_075', 'mnasnet_100', 'mnasnet_b1', 
     'mnasnet_140', 'semnasnet_050', 'semnasnet_075', 'semnasnet_100', 'mnasnet_a1', 'semnasnet_140', 
