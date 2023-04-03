@@ -45,7 +45,7 @@ model = ModelClass(
         config["enet_type"],
         config["out_dim"],
         pretrained = config["pretrained"] )
-device = torch.device('cuda')
+device = torch.device('cpu')
 model = model.to(device)
 
 
@@ -58,12 +58,7 @@ def gen_onnx(args):
         model_file = os.path.join(config["model_dir"], f'final_fold{args.fold}.pth')
 
 
-    try:  # single GPU model_file
-        model.load_state_dict(torch.load(model_file), strict=True)
-    except:  # multi GPU model_file
-        state_dict = torch.load(model_file)
-        state_dict = {k[7:] if k.startswith('module.') else k: state_dict[k] for k in state_dict.keys()}
-        model.load_state_dict(state_dict, strict=True)
+    model.load_state_dict(torch.load(model_file, map_location=torch.device('cpu')), strict=True)
 
     model.eval()
 
@@ -93,7 +88,7 @@ def gen_onnx(args):
     # output_names = ["hm" , "wh"  , "reg"]
     output_names = ["out"]
     dynamic_axes = {'input': {0: 'batch'}, 'out': {0: 'batch'}}
-    inputs = torch.randn(args.batch_size, 3,128,128).cuda()
+    inputs = torch.randn(args.batch_size, 3,128,128).cpu()
     '''
     export_type = torch.onnx.OperatorExportTypes.ONNX
     torch_out = torch.onnx._export(model, inputs, output_onnx, export_params=True, verbose=False,do_constant_folding=False,keep_initializers_as_inputs=True,
