@@ -636,10 +636,16 @@ def _create_resnet(variant, pretrained=False, **kwargs):
     return build_model_with_cfg(
         ResNet, variant, default_cfg=default_cfgs[variant], pretrained=pretrained, **kwargs)
 
+@register_model
+def resnet09(pretrained=False, **kwargs):
+    """Constructs a ResNet-18 model.
+    """
+    model_args = dict(block=BasicBlock, layers=[1, 1, 0, 0], **kwargs)
+    return _create_resnet('resnet18', pretrained, **model_args)
 
 @register_model
 def resnet18(pretrained=False, **kwargs):
-    """Constructs a ResNet-18 model.
+    """Constructs a ResNet1024-18 model.
     """
     model_args = dict(block=BasicBlock, layers=[2, 2, 2, 2], **kwargs)
     return _create_resnet('resnet18', pretrained, **model_args)
