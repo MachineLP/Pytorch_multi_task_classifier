@@ -640,7 +640,7 @@ def _create_resnet(variant, pretrained=False, **kwargs):
 def resnet09(pretrained=False, **kwargs):
     """Constructs a ResNet-18 model.
     """
-    model_args = dict(block=BasicBlock, layers=[1, 1, 0, 0], **kwargs)
+    model_args = dict(block=BasicBlock, layers=[1, 1, 1, 1], **kwargs)
     return _create_resnet('resnet18', pretrained, **model_args)
 
 @register_model
