@@ -2,7 +2,7 @@
 data_dir : "./data/"
 data_folder : "./data/"
 image_size : 256
-enet_type : "resnet18"  # tf_efficientnet_b4_ns/resnest101/seresnext101
+enet_type : "resnet09"  # tf_efficientnet_b4_ns/resnest101/seresnext101
 metric_strategy : False
 batch_size : 64
 num_workers : 12
@@ -13,11 +13,11 @@ drop_nums : 1
 loss_type : "ce_loss"  # ce_loss, ce_smothing_loss, focal_loss, bce_loss(多标签，待支持), mlsm_loss(多标签，待支持)
 use_amp : False
 mixup_cutmix : False
-model_dir : "./resnet18/weight/"
-log_dir : "./resnet18/logs/"
+model_dir : "./resnet09/weight/"
+log_dir : "./resnet09/logs/"
 CUDA_VISIBLE_DEVICES : "0"   # 多GPU训练："0,1,2,3"
 fold : "0,1,2,3,4"
-pretrained : True
+pretrained : False
 eval : "best"                  # "best", "final"
-oof_dir : "./resnet18/oofs/"
+oof_dir : "./resnet09/oofs/"
 auc_index : "punch"
