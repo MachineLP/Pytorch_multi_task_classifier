@@ -160,6 +160,7 @@ if __name__ == '__main__' :
 
             probs = Sigmoid_fun(qd_model.predict(src_img))
             print (">>>>>", probs)
+            cv2.putText(img, "Negative       :{}".format( probs[0][0].cpu().detach().numpy()), (20, 20), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1, cv2.LINE_AA)
             cv2.putText(img, "Normal         :{}".format( probs[0][0].cpu().detach().numpy()), (20, 20), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1, cv2.LINE_AA)
             cv2.putText(img, "Occlusion      :{}".format( probs[0][1].cpu().detach().numpy()), (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1, cv2.LINE_AA)
             cv2.putText(img, "Occ-left-eye   :{}".format( probs[0][2].cpu().detach().numpy()), (20, 60), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1, cv2.LINE_AA)
