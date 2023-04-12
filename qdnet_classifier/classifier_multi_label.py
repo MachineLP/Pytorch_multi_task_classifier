@@ -15,8 +15,11 @@ import warnings
 import numpy as np
 from typing import Optional
 from typing import List
+<<<<<<< HEAD
 from mtcnn import MTCNN
 
+=======
+>>>>>>> c2c3686bfe0348bbf61afddc191cde3961bcbcd8
 
 
 

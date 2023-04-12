@@ -25,7 +25,7 @@ Easy-to-use/Easy-to-deploy/Easy-to-develop
 git clone https://github.com/MachineLP/PyTorch_image_classifier
 pip install -r requirements.txt
 cd PyTorch_image_classifier
-python tools/data_preprocess_multi_task.py --data_dir "./data/data.csv" --n_splits 3 --output_dir "./data/train.csv" --random_state 2020
+python tools/data_preprocess_multi_task.py --data_dir "./data/data.csv" --n_splits 5 --output_dir "./data/train.csv" --random_state 2020
 ```
 
 ## resnet18
