@@ -1,0 +1,1 @@
+Wed Apr 12 14:35:20 2023 Fold 0, Epoch 1, lr: 0.0000300, train loss: 0.27439, valid loss: 0.15106, precision: 0.8698, recall: 0.866947.
