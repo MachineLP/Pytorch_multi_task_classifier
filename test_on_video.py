@@ -161,15 +161,15 @@ if __name__ == '__main__' :
             probs = Sigmoid_fun(qd_model.predict(src_img))
             print (">>>>>", probs)
             cv2.putText(img, "Negative       :{}".format( probs[0][0].cpu().detach().numpy()), (20, 20), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1, cv2.LINE_AA)
-            cv2.putText(img, "Normal         :{}".format( probs[0][0].cpu().detach().numpy()), (20, 20), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1, cv2.LINE_AA)
-            cv2.putText(img, "Occlusion      :{}".format( probs[0][1].cpu().detach().numpy()), (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1, cv2.LINE_AA)
-            cv2.putText(img, "Occ-left-eye   :{}".format( probs[0][2].cpu().detach().numpy()), (20, 60), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1, cv2.LINE_AA)
-            cv2.putText(img, "Occ-right-eye  :{}".format( probs[0][3].cpu().detach().numpy()), (20, 80), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1, cv2.LINE_AA)
-            cv2.putText(img, "Occ-Nose       :{}".format( probs[0][4].cpu().detach().numpy()), (20, 100), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1, cv2.LINE_AA)
-            cv2.putText(img, "Occ-mouth      :{}".format( probs[0][5].cpu().detach().numpy()), (20, 120), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1, cv2.LINE_AA)
-            cv2.putText(img, "Occ-face-mask  :{}".format( probs[0][6].cpu().detach().numpy()), (20, 140), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1, cv2.LINE_AA)
-            cv2.putText(img, "Occ-glasses    :{}".format( probs[0][7].cpu().detach().numpy()), (20, 160), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1, cv2.LINE_AA)
-            cv2.putText(img, "Occ-sun-glasses:{}".format( probs[0][8].cpu().detach().numpy()), (20, 180), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1, cv2.LINE_AA)
+            cv2.putText(img, "Normal         :{}".format( probs[0][1].cpu().detach().numpy()), (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1, cv2.LINE_AA)
+            cv2.putText(img, "Occlusion      :{}".format( probs[0][2].cpu().detach().numpy()), (20, 60), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1, cv2.LINE_AA)
+            cv2.putText(img, "Occ-left-eye   :{}".format( probs[0][3].cpu().detach().numpy()), (20, 80), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1, cv2.LINE_AA)
+            cv2.putText(img, "Occ-right-eye  :{}".format( probs[0][4].cpu().detach().numpy()), (20, 100), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1, cv2.LINE_AA)
+            cv2.putText(img, "Occ-Nose       :{}".format( probs[0][5].cpu().detach().numpy()), (20, 120), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1, cv2.LINE_AA)
+            cv2.putText(img, "Occ-mouth      :{}".format( probs[0][6].cpu().detach().numpy()), (20, 140), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1, cv2.LINE_AA)
+            cv2.putText(img, "Occ-face-mask  :{}".format( probs[0][7].cpu().detach().numpy()), (20, 160), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1, cv2.LINE_AA)
+            cv2.putText(img, "Occ-glasses    :{}".format( probs[0][8].cpu().detach().numpy()), (20, 180), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1, cv2.LINE_AA)
+            cv2.putText(img, "Occ-sun-glasses:{}".format( probs[0][9].cpu().detach().numpy()), (20, 200), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1, cv2.LINE_AA)
 
             frame = cv2.rectangle( img, (x1, y1), (x2,y2), (255,0,0), 2 )
 
@@ -192,5 +192,5 @@ if __name__ == '__main__' :
         if k == 27 : break
 
 '''
-python test_on_video.py --config_path "conf/tf_mobilenetv3_small_minimal_100_multilabel.yaml" --img data/test_img/001.jpg --fold 0
+python test_on_video.py --config_path "conf/mobilenetv3_small_multilabel.yaml" --img data/test_img/001.jpg --fold 0
 '''
