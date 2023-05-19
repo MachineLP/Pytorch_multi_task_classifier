@@ -83,11 +83,11 @@ class QDNetModel():
 
 
     def predict(self, data):
-        if os.path.isfile(data):
-            image = cv2.imread(data)
-            image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-        else:
-            image = cv2.cvtColor(data, cv2.COLOR_BGR2RGB)
+        #if os.path.isfile(data):
+        #    image = cv2.imread(data)
+        #    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+        #else:
+        image = cv2.cvtColor(data, cv2.COLOR_BGR2RGB)
         res = self.transforms_val(image=image)
         image = res['image'].astype(np.float32)
 
@@ -139,8 +139,22 @@ if __name__ == '__main__' :
         bbox, scores, landmarks = mtcnn.detect(img)
         if len( bbox ) > 0:
             box = bbox[0]
+
+            src_img = img[ int(box[0]):int(box[2]), int(box[1]):int(box[3]), : ]
+            img1 = cv2.resize(src_img, (112, 112))
+            image_data = img1.transpose(2, 0, 1)[np.newaxis].astype(np.float32) / 255
+            output = session.run([], {input_name: image_data})[1]
+
+            landmarks = output.reshape(-1, 2)
+            landmarks[:, 0] = landmarks[:, 0] * src_img.shape[1]
+            landmarks[:, 1] = landmarks[:, 1] * src_img.shape[0]
+            
+
+
             # print (">>>>>", box)
+            '''
             y1, x1, y2, x2 = int(box[0]), int(box[1]), int(box[2]), int(box[3])
+            
             h = y2-y1
             w = x2 -x1
             y1, x1, y2, x2 = int(y1-h*0.2), x1, int(y2+h*0.1), x2
@@ -152,6 +166,25 @@ if __name__ == '__main__' :
             else:
                 gap = (w-h)//2
                 y1, x1, y2, x2 = y1-gap, x1, y2+gap, x2
+            
+            '''
+
+            y1, x1, y2, x2 = int(box[0])+int(min(landmarks[:, 1])), int(box[1])+int(min(landmarks[:, 0])), int(box[0])+int(max(landmarks[:, 1])), int(box[1])+int(max(landmarks[:, 0]))
+
+            print (">>>>>", y1, x1, y2, x2)
+            
+            h = y2-y1
+            w = x2 -x1
+            y1, x1, y2, x2 = int(y1-h*0.5), x1, int(y2+h*0.1), x2
+            h = y2-y1
+            w = x2 -x1
+            if h>w:
+                gap = (h-w)//2
+                y1, x1, y2, x2 = y1, x1-gap, y2, x2+gap
+            else:
+                gap = (w-h)//2
+                y1, x1, y2, x2 = y1-gap, x1, y2+gap, x2
+            
 
             # y1, x1, y2, x2 = y1-50, x1-30, y2+20, x2+30
             src_img = img[ y1:y2, x1:x2, : ]
@@ -171,19 +204,11 @@ if __name__ == '__main__' :
             cv2.putText(img, "Occ-glasses    :{}".format( probs[0][8].cpu().detach().numpy()), (20, 180), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1, cv2.LINE_AA)
             cv2.putText(img, "Occ-sun-glasses:{}".format( probs[0][9].cpu().detach().numpy()), (20, 200), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1, cv2.LINE_AA)
 
-            frame = cv2.rectangle( img, (x1, y1), (x2,y2), (255,0,0), 2 )
-
-            src_img = img[ int(box[0]):int(box[2]), int(box[1]):int(box[3]), : ]
-            img1 = cv2.resize(src_img, (112, 112))
-            image_data = img1.transpose(2, 0, 1)[np.newaxis].astype(np.float32) / 255
-            output = session.run([], {input_name: image_data})[1]
-
-            landmarks = output.reshape(-1, 2)
-            landmarks[:, 0] = landmarks[:, 0] * src_img.shape[1]
-            landmarks[:, 1] = landmarks[:, 1] * src_img.shape[0]
 
             for (x, y) in landmarks:
                 cv2.circle(frame, (int(box[1])+int(x), int(box[0])+int(y)), 2, (0, 0, 255), -1)
+            
+            frame = cv2.rectangle( img, (x1, y1), (x2,y2), (255,0,0), 2 )
         # Display result
         cv2.imshow("Tracking", frame)
  
